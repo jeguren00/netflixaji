@@ -14,10 +14,19 @@ class Videos extends Migration
     public function up()
     {
         Schema::create('videos', function(Blueprint $table) {
-            $table->id();
-            $table->title
-        })
-    }
+            $table->increments('id');//integer
+            $table->String('title');
+            $table->integer('year');
+            $table->String('sinopsis');
+            $table->String('duration');
+            $table->string('type');
+            $table->string('imagen');
+            $table->string('gendre');
+            $table->string('file');
+            $table->integer('season')->default(0);
+            $table->integer('chapter')->default(0);
+    });
+}
 
     /**
      * Reverse the migrations.
@@ -26,6 +35,6 @@ class Videos extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('videos');
     }
 }
