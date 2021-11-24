@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Payments extends Migration
+class History extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,11 @@ class Payments extends Migration
      */
     public function up()
     {
-        //
-        Schema::create('payments', function(Blueprint $table) {
-            $table->increments('paymentId');//integer
-            $table->boolean('declined');
-            //remains to input foreing keys
+        Schema::create('history', function(Blueprint $table){
+            $table->integer('idVideo');
+            $table->string('idUser');
         });
-    }        
-}
+    }
 
     /**
      * Reverse the migrations.
@@ -29,6 +26,6 @@ class Payments extends Migration
      */
     public function down()
     {
-        Schema::drop('videos');
+        Schema::drop('history');
     }
 }
