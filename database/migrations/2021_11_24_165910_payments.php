@@ -15,12 +15,17 @@ class Payments extends Migration
     {
         //
         Schema::create('payments', function(Blueprint $table) {
+            $table->foreign('userName')->references('userid')->on('users');
             $table->increments('paymentId');//integer
             $table->boolean('declined');
             //remains to input foreing keys
         });
+<<<<<<< HEAD
+    }
+=======
     }        
 }
+>>>>>>> be59e8963b8f34b4ff1b64cd87cb384958a46634
 
     /**
      * Reverse the migrations.
