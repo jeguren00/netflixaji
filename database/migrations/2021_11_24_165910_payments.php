@@ -20,12 +20,7 @@ class Payments extends Migration
             $table->boolean('declined');
             //remains to input foreing keys
         });
-<<<<<<< HEAD
     }
-=======
-    }        
-}
->>>>>>> be59e8963b8f34b4ff1b64cd87cb384958a46634
 
     /**
      * Reverse the migrations.
