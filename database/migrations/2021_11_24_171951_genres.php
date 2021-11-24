@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Videos extends Migration
+class Genres extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class Videos extends Migration
      */
     public function up()
     {
-        Schema::create('videos', function(Blueprint $table) {
-            $table->id();
-            $table->title
-        })
+        //
+        Schema::create('genres', function(Blueprint $table) {
+            $table->increments('idGenere');//integer
+            $table->string('name');
+            $table->string('description');
+            //remains to input foreing keys
+        });
     }
 
     /**
