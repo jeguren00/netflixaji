@@ -19,7 +19,6 @@ class Payments extends Migration
             $table->date('paymentDate');
             $table->increments('paymentId');//integer
             $table->boolean('declined');
-            //remains to input foreing keys
         });
     }
 

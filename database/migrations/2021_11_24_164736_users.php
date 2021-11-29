@@ -20,7 +20,7 @@ class Users extends Migration
             $table->String('name');
             $table->String('surname');
             $table->String('mail');
-            $table->hash('hash');
+            $table->String('password');
             $table->date('birthDate');
             $table->String('type');
             $table->boolean('block');
