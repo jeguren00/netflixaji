@@ -1,12 +1,13 @@
 # STREAMINGAJI
-## Jordi, Ignasi y Adán
 
-Proyecto de 2º de Desarrollo de Aplicaciones Web de la Escola del Treball de Barcelona. El proyecto consiste en desarrollar una aplicación web tipo _Netflix_ de visualización de streaming online y se ha realizado para la asignatura de Desarrollo Web en entorno Servidor.
+ __Jordi, Ignasi y Adán__
 
-Diagrama de la BBDD
+Proyecto de 2º de __Desarrollo de Aplicaciones Web__ de la Escola del Treball de Barcelona. El proyecto consiste en desarrollar una aplicación web tipo _Netflix_ de visualización de streaming online y se ha realizado para la asignatura de Desarrollo Web en entorno Servidor.
+
+## Diagrama de la BBDD
 <img src="./documentation/diagramaProyectoStreamingDb.drawio.png">
 
-Mockups de las diferentes páginas que realizaremos
+## Mockups de las diferentes páginas que realizaremos
 <img src="./documentation/home%20sin%20login.png">
 <img src="./documentation/formulario%20datos%20de%20usuario.png">
 <img src="./documentation/formulario%20de%20pago.png">
