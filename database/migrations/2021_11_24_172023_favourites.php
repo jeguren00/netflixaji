@@ -14,8 +14,8 @@ class Favourites extends Migration
     public function up()
     {
         Schema::create('favourites', function(Blueprint $table){
-            $table->integer('idVideo');
-            $table->string('idUser');
+            $table->foreign('idVideo')->references('idVideo')->on('videos');
+            $table->foreign('idUser')->references('idUser')->on('users');
         });
     }
 

@@ -15,11 +15,12 @@ class Users extends Migration
     {
         //
         Schema::create('users', function(Blueprint $table) {
+            $table->increments('userId');
             $table->String('userName');
             $table->String('name');
             $table->String('surname');
             $table->String('mail');
-            $table->String('hash');
+            $table->hash('hash');
             $table->date('birthDate');
             $table->String('type');
             $table->boolean('block');
