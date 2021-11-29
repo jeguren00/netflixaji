@@ -21,12 +21,13 @@ class Videos extends Migration
             $table->String('duration');
             $table->string('type');
             $table->string('imagen');
-            $table->foreign('idGenere')->references('idGenere')->on('generes');
+            $table->unsignedInteger('idGenere');
+            $table->foreign('idGenere')->references('idGenere')->on('genres');
             $table->string('file');
             $table->integer('season')->default(0);
             $table->integer('chapter')->default(0);
-    });
-}
+        });
+    }
 
     /**
      * Reverse the migrations.
@@ -38,4 +39,3 @@ class Videos extends Migration
         Schema::drop('videos');
     }
 }
-

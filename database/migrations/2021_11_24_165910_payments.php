@@ -15,7 +15,8 @@ class Payments extends Migration
     {
         //
         Schema::create('payments', function(Blueprint $table) {
-            $table->foreign('userName')->references('userid')->on('users');
+            $table->unsignedInteger('userId');
+            $table->foreign('userId')->references('userId')->on('users');
             $table->date('paymentDate');
             $table->increments('paymentId');//integer
             $table->boolean('declined');
