@@ -14,8 +14,10 @@ class History extends Migration
     public function up()
     {
         Schema::create('history', function(Blueprint $table){
-            $table->integer('idVideo');
-            $table->string('idUser');
+            $table->unsignedInteger('userId');
+            $table->unsignedInteger('idVideo');
+            $table->foreign('idVideo')->references('idVideo')->on('videos');
+            $table->foreign('userId')->references('userId')->on('users');
         });
     }
 
