@@ -25,7 +25,7 @@ class Users extends Migration
             $table->String('type');
             $table->boolean('block');
             $table->integer('creditCard');
-            $table->integer('creditCardExpirationDate');
+            $table->String('creditCardExpirationDate');
             $table->integer('creditCardCVV');
         });
     }
