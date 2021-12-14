@@ -56,15 +56,11 @@ Route::get('/userHome', function () {
 });
 
 Route::get('/video?idVideo=?', function () {
-    return view('');
-});
-
-Route::get('/video?idVideo=?', function () {
-    return view('');
+    return view('viewStreaming');
 });
 
 Route::get('/serach?AAAAAA', function () {
-    return view('');
+    return view('searchResults');
 });
 
 Route::get('/favourites', function () {
