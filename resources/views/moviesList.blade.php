@@ -10,7 +10,7 @@
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <video class="img-fluid w-100" style="height: 30em;" autoplay loop muted>
+            <video class="img-fluid w-100" style="height: 50em" autoplay loop muted>
                 <source src="trailerInterstellar.mp4" type="video/mp4" />
             </video>
 
@@ -26,14 +26,14 @@
             </div>
         </div>
         <div class="carousel-item">
-            <video class="img-fluid" autoplay loop muted>
+            <video class="img-fluid w-100" style="height: 50em" autoplay loop muted>
                 <source src="trailerInterstellar.mp4" type="video/mp4" />
             </video>
 
             <div class="container">
                 <div class="carousel-caption text-start">
                     <h1>Título peli 2</h1>
-                    <p>
+                    <p class="w-50">
                         Descripción. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                         Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
                     </p>
@@ -42,14 +42,14 @@
             </div>
         </div>
         <div class="carousel-item">
-            <video class="img-fluid w-100" style="height: 5em" autoplay loop muted>
+            <video class="img-fluid w-100" style="height: 50em" autoplay loop muted>
                 <source src="https://mdbootstrap.com/img/video/Tropical.mp4" type="video/mp4" />
             </video>
 
             <div class="container">
                 <div class="carousel-caption text-start">
                     <h1>Título peli 3</h1>
-                    <p>
+                    <p class="w-50">
                         Descripción. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                         Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
                     </p>
@@ -69,6 +69,50 @@
 </div>
 
 <!-- Movies Carousel -->
+<div class="container">
+    <div class="row">
+        <div class="col col-4 d-flex flex-wrap mt-5">    
+            <h1 class="text-dark">American History X</h1>
+            <img src="../img/american_historyX.jpg" style="height: 500px;
+                                                        background-repeat: no-repeat;
+                                                        background-position: center;
+                                                        background-size: cover;">
+            <p>Descripción</p>
+        </div>
+        <div class="col col-4 d-flex flex-wrap mt-5">    
+            <h1 class="text-dark">El Efecto Mariposa</h1>
+            <img src="../img/efecto_mariposa.jpg" style="height: 500px;
+                                                        background-repeat: no-repeat;
+                                                        background-position: center;
+                                                        background-size: cover;">
+            <p>Descripción</p>
+        </div>
+        <div class="col col-4 d-flex flex-wrap mt-5">    
+            <h1 class="text-dark">El Club de la Lucha</h1>
+            <img src="../img/club_de_la_lucha.jpg" style="height: 500px;
+                                                        background-repeat: no-repeat;
+                                                        background-position: center;
+                                                        background-size: cover;">
+            <p>Descripción</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-4 d-flex flex-wrap mt-5">    
+            <h1 class="text-dark">Peli 4</h1>
+            <p>Descripción</p>
+        </div>
+        <div class="col col-4 d-flex flex-wrap mt-5">    
+            <h1 class="text-dark">Peli 5</h1>
+            <p>Descripción</p>
+        </div>
+        <div class="col col-4 d-flex flex-wrap mt-5">    
+            <h1 class="text-dark">Peli 6</h1>
+            <p>Descripción</p>
+        </div>
+    </div>        
+</div>
+
+<!--
 <div class="container">
     <div class="row">
         <div id="carouselMovies" class="carousel slide" data-ride="carousel">
@@ -104,7 +148,9 @@
                     </div>
                 </div>
             </div>
+-->
             <!-- Carousel controls -->
+<!--
             <button class="carousel-control-prev" data-bs-target="#carouselMovies" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
@@ -146,7 +192,7 @@
         </div>
     </div>
 </div>
-
+-->
 <!-- <div id="carousel2" class="container mt-5 mb-5">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#carousel2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
