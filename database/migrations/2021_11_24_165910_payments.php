@@ -30,6 +30,6 @@ class Payments extends Migration
      */
     public function down()
     {
-        Schema::drop('videos');
+        Schema::drop('payments');
     }
 }

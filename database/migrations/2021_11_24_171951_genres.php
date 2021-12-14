@@ -29,6 +29,6 @@ class Genres extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('genres');
     }
 }

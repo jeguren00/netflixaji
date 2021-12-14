@@ -23,7 +23,18 @@ class DatabaseSeeder extends Seeder
 class ProductSeeder extends Seeder
 {
     public function run(){
-        //DB::table('user')->insert(['userName' => 'jgarcia', 'name' => 'jordi', 'surname' => 'garcia', 'mail' => 'jeguren@gmail.com','password' => 'jordi','birthDate' => '02/12/2000'
-        //,'type' => 'normal','block' => 'false','creditCard' => 14231 ,'creditCardExpirationDate' => "23/12",'creditCardExpirationDate' => "339" ]);
+        /*
+        DB::table('user')->insert([
+            'userName' => 'jgarcia', 
+            'name' => 'jordi', 
+            'surname' => 'garcia', 
+            'mail' => 'jeguren@gmail.com',
+            'password' => 'jordi',
+            'birthDate' => '02/12/2000',
+            'type' => 'normal',
+            'block' => 'false',
+            'creditCard' => 14231 ,
+            'creditCardExpirationDate' => "23/12",
+            'creditCardExpirationDate' => "339" ]);*/
     }
 }
