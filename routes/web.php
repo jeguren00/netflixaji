@@ -79,6 +79,10 @@ Route::get('/user/changeBdData', function () {
     return view('');
 });
 
+Route::get('/movies', function () {
+    return view('moviesList');
+});
+
 //admin part
 
 Route::get('/admin/listUsers', function () {
@@ -96,3 +100,4 @@ Route::get('/adminBlockUser', function () {
 Route::get('/admin/changeBdData', function () {
     return view('adminChangeBdData');
 });
+
