@@ -23,7 +23,7 @@ Route::get('/login', function () {
 });
 
 Route::get('/home', function () {
-    return view('homeUnregistered');
+    return view('moviesList');
 });
 
 Route::get('/register', function () {
@@ -100,4 +100,3 @@ Route::get('/adminBlockUser', function () {
 Route::get('/admin/changeBdData', function () {
     return view('adminChangeBdData');
 });
-
