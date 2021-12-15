@@ -20,7 +20,7 @@ class Videos extends Migration
             $table->String('sinopsis');
             $table->String('duration');
             $table->string('type');
-            $table->string('imagen');
+            $table->string('image');
             $table->unsignedInteger('idGenere');
             $table->foreign('idGenere')->references('idGenere')->on('genres');
             $table->string('file');

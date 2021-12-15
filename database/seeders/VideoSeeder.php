@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+
 
 class VideoSeeder extends Seeder
 {
@@ -19,18 +21,18 @@ class VideoSeeder extends Seeder
         'sinopsis' => "aaaaa",
         'duration' => "107" ,
         'type' => "movie",
-        'imagen' => "backToTheFuture.jpg" ,
+        'image' => "./img/backToTheFuture.jpg" ,
         'idGenere' => "1" ,
-        'file' => "./backToTheFuture.avi" ]);
+        'file' => "./public/video/backToTheFuture.avi" ]);
 
         DB::table('videos')->insert(['title' => 'Jurassic Park', 
         'year' => 1993 , 
         'sinopsis' => "https://en.wikipedia.org/wiki/Jurassic_Park_(film)",
         'duration' => "128" ,
         'type' => "movie",
-        'imagen' => "jurassicPark.jpg" ,
+        'image' => "./img/jurassicPark.jpg" ,
         'idGenere' => "1" ,
-        'file' => "./jurassicPark.avi" ]);
+        'file' => "./public/video/jurassicPark.avi" ]);
 
         //serie
         DB::table('videos')->insert(['title' => 'Black Mirror', 
@@ -38,9 +40,9 @@ class VideoSeeder extends Seeder
         'sinopsis' => "https://en.wikipedia.org/wiki/Black_Mirror",
         'duration' => "" ,
         'type' => "serie",
-        'imagen' => "blackMirror.jpg" ,
+        'image' => "./img/blackMirror.jpg" ,
         'idGenere' => "1" ,
-        'file' => "./blackMirror11.avi",
+        'file' => "./public/video/blackMirror11.avi",
         'season' => "1",
         'chapter' => "1"]);
 
@@ -49,9 +51,9 @@ class VideoSeeder extends Seeder
         'sinopsis' => "https://en.wikipedia.org/wiki/Black_Mirror",
         'duration' => "" ,
         'type' => "serie",
-        'imagen' => "blackMirror.jpg" ,
+        'image' => "./img/blackMirror.jpg" ,
         'idGenere' => "1" ,
-        'file' => "./blackMirror12.avi",
+        'file' => "./public/video/blackMirror12.avi",
         'season' => "1",
         'chapter' => "2"]);
 
@@ -60,9 +62,9 @@ class VideoSeeder extends Seeder
         'sinopsis' => "https://en.wikipedia.org/wiki/Black_Mirror",
         'duration' => "" ,
         'type' => "serie",
-        'imagen' => "blackMirror.jpg" ,
+        'image' => "./img/blackMirror.jpg" ,
         'idGenere' => "1" ,
-        'file' => "./blackMirror13.avi",
+        'file' => "./public/video/blackMirror13.avi",
         'season' => "1",
         'chapter' => "3"]);
     }
