@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\VideoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,9 +22,11 @@ Route::get('/login', function () {
     return view('loginView');
 });
 
-Route::get('/home', function () {
-    return view('moviesList');
-});
+//Route::get('/home', function () {
+//    return view('moviesList');
+//});
+
+Route::get('/home', [VideoController::class,'fillhome']);
 
 Route::get('/register', function () {
     return view('registration');
