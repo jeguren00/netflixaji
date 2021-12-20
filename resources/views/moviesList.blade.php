@@ -46,15 +46,35 @@
 </div>
 
 <!-- Movies Carousel -->
-<div class="container">
+<div class="container mt-5">
     <div class="row">
+        <h1>Pelis y Series</h1>
         @forelse ($videos as $video)
+            @if (!($video->type === "serie" && $video->idVideo != 0))
+                <div class="col col-4 d-flex flex-wrap mt-5">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="{{ $video->image }}" alt="Card image cap">
+                        <div class="card-body">
+                            <h3 class="card-title">{{ $video->title }}</h3>
+                            <p class="card-text">{{ $video->sinopsis }}</p>
+                            <a href="#" class="btn btn-primary">Ver película</a>
+                        </div>
+                    </div>
+                </div>
+            @endif
+        @empty
+            <p>No hay videos</p>
+        @endforelse
+    </div>        
+    <div class="row">
+        <h1>Películas</h1>
+        @forelse ($pelis as $peli)
         <div class="col col-4 d-flex flex-wrap mt-5">
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="{{ $video->image }}" alt="Card image cap">
+                <img class="card-img-top" src="{{ $peli->image }}" alt="Card image cap">
                 <div class="card-body">
-                    <h3 class="card-title">{{ $video->title }}</h3>
-                    <p class="card-text">{{ $video->sinopsis }}</p>
+                    <h3 class="card-title">{{ $peli->title }}</h3>
+                    <p class="card-text">{{ $peli->sinopsis }}</p>
                     <a href="#" class="btn btn-primary">Ver película</a>
                 </div>
             </div>

@@ -26,6 +26,8 @@ class VideoController extends Controller
 
     public function getVideos() {
         $videos = $this->video->videos($this->query)->get();
-        return view("moviesList")->with(['videos' => $videos]);
+        $pelis = $this->video->scopePelis($this->query)->get();
+
+        return view("moviesList")->with(['videos' => $videos])->with(['pelis' => $pelis]);
     }
 }
