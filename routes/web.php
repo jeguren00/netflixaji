@@ -57,7 +57,7 @@ Route::get('/userHome', function () {
     return view('userHome');
 });
 
-Route::get('/video?idVideo=?', function () {
+Route::get('/stream', function () {
     return view('viewStreaming');
 });
 
