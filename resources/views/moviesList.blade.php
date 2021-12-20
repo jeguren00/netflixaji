@@ -2,9 +2,6 @@
 @section('title', 'Movies')
 
 @section('content')
-<?php
-//var_dump($videos);
-?>
 <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -74,59 +71,20 @@
 <!-- Movies Carousel -->
 <div class="container">
     <div class="row">
-        <div class="col col-4 d-flex flex-wrap mt-5">    
-            <h1 class="text-dark">American History X</h1>
-            <img src="../img/american_historyX.jpg" style="height: 500px;
-                                                        background-repeat: no-repeat;
-                                                        background-position: center;
-                                                        background-size: cover;">
-            <p>Descripción</p>
+        @forelse ($videos as $video)
+        <div class="col col-4 d-flex flex-wrap mt-5">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="{{ $video->image }}" alt="Card image cap">
+                <div class="card-body">
+                    <h3 class="card-title">{{ $video->title }}</h3>
+                    <p class="card-text">{{ $video->sinopsis }}</p>
+                    <a href="#" class="btn btn-primary">Ver película</a>
+                </div>
+            </div>
         </div>
-        <div class="col col-4 d-flex flex-wrap mt-5">    
-            <h1 class="text-dark">El Efecto Mariposa</h1>
-            <img src="../img/efecto_mariposa.jpg" style="height: 500px;
-                                                        background-repeat: no-repeat;
-                                                        background-position: center;
-                                                        background-size: cover;">
-            <p>Descripción</p>
-        </div>
-        <div class="col col-4 d-flex flex-wrap mt-5">    
-            <h1 class="text-dark">El Club de la Lucha</h1>
-            <img src="../img/club_de_la_lucha.jpg" style="height: 500px;
-                                                        background-repeat: no-repeat;
-                                                        background-position: center;
-                                                        background-size: cover;">
-            <p>Descripción</p>
-        </div>
-    </div>
-    <div class="row">
-    @forelse ($videos as $video)
-        <div class="col col-4 d-flex flex-wrap mt-5">    
-            <h1 class="text-dark">{{$video->title}}</h1>
-            <img src="{{$video->image}}">
-            <p>Descripción</p>
-        </div>
-    @empty
-        <p>No hay videos</p>
-    @endforelse
+        @empty
+            <p>No hay videos</p>
+        @endforelse
     </div>        
 </div>
-<!--
-       <div class="col col-4 d-flex flex-wrap mt-5">    
-            <h1 class="text-dark">Peli 5</h1>
-            <p>Descripción</p>
-        </div>
-        <div class="col col-4 d-flex flex-wrap mt-5">    
-            <h1 class="text-dark">Peli 6</h1>
-            <p>Descripción</p>
-        </div> type="button" class="btn btn-lg btn-default">button</        <div class="col col-4 d-flex flex-wrap mt-5">    
-            <h1 class="text-dark">Peli 5</h1>
-            <p>Descripción</p>
-        </div>
-        <div class="col col-4 d-flex flex-wrap mt-5">    
-            <h1 class="text-dark">Peli 6</h1>
-            <p>Descripción</p>
-        </div>>
-    
--->
 @endsection
