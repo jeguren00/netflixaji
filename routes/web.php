@@ -26,7 +26,7 @@ Route::get('/login', function () {
 //    return view('moviesList');
 //});
 
-Route::get('/home', [VideoController::class,'fillhome']);
+Route::get('/home', [VideoController::class,'getVideos']);
 
 Route::get('/register', function () {
     return view('registration');
