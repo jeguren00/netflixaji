@@ -69,8 +69,9 @@
 </div>
 
 <!-- Movies Carousel -->
-<div class="container">
+<div class="container mt-5">
     <div class="row">
+        <h1>Películas</h1>
         @forelse ($videos as $video)
         <div class="col col-4 d-flex flex-wrap mt-5">
             <div class="card" style="width: 18rem;">
