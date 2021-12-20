@@ -1,3 +1,7 @@
+@extends('layouts/layouts')
+@section('title', 'Movies')
+
+@section('content')
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css " rel="stylesheet" id="bootstrap-css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js "></script>
@@ -57,7 +61,6 @@
     <div class="container mt-5">
         <div class="row d-flex justify-content-center">
             <div class="col-md-7">
-            <h5 class="mt-2 mb-0 text-center">StreamingAJI</h5>
             <br>
                 <div class="card p-3 py-4">
                         <h5 class="mt-2 mb-0">Name: </h5><p>asdasdas</p>
@@ -79,3 +82,4 @@
         </div>
     </div>
 </body>
+@endsection
