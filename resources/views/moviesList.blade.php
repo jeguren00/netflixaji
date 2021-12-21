@@ -16,7 +16,7 @@
                 <div class="carousel-item">
             @endif
                 <video class="img-fluid w-100" style="height: 50em" autoplay loop muted>
-                    <source src="{{ $video->file }}" type="video/mp4" />
+                    <source src="{{ $video->trailer }}" type="video/mp4" />
                 </video>
 
                 <div class="container">
