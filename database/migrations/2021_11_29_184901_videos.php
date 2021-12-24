@@ -17,7 +17,7 @@ class Videos extends Migration
             $table->increments('idVideo');//integer
             $table->String('title');
             $table->integer('year');
-            $table->String('sinopsis');
+            $table->text('sinopsis');
             $table->String('duration');
             $table->string('type');
             $table->string('image');
