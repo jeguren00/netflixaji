@@ -1,3 +1,7 @@
+@extends('layouts/layouts')
+@section('title', 'Movies')
+
+@section('content')
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -30,56 +34,55 @@
                     <h3 class="masthead-brand">
                         <a href="home_sin_login.php">StreamingAJI</a>
                     </h3>
-                    <!-- <nav class="nav nav-masthead justify-content-center">
-            <a class="nav-link active" href="#">Home</a>
-            <a class="nav-link" href="#">Features</a>
-            <a class="nav-link" href="#">Contact</a>
-          </nav> -->
                 </div>
             </header>
-            <h2 class="cover-heading">Por favor, introduce tus datos</h2>
+            <h2 class="cover-heading">Please introduce the requested data</h2>
 
-            <form>
+            <form method="POST" action="/register/save">
                 <div class="form-group">
                     <div class="form-floating mb-3">
                         <input
+                            required
                             type="text"
                             class="form-control"
-                            id="nombre"
+                            name="name"
                             placeholder="Pepe"
                         />
-                        <label for="nombre">Nombre</label>
+                        <label for="nombre">Name</label>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="form-floating mb-3">
                         <input
+                            required
                             type="text"
                             class="form-control"
-                            id="apellidos"
+                            name="surname"
                             placeholder="Pepe"
                         />
-                        <label for="apellidos">Apellidos</label>
+                        <label for="apellidos">Surname</label>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="form-floating mb-3">
                         <input
+                            required
                             type="text"
                             class="form-control"
-                            id="username"
+                            name="username"
                             placeholder="Pepe"
                         />
-                        <label for="username">Nombre de usuario</label>
+                        <label for="username">Username</label>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="form-floating mb-3">
                         <input
+                            required
                             type="email"
                             class="form-control"
-                            id="email"
+                            name="email"
                             placeholder="Pepe@macario.com"
                         />
                         <label for="email">Email</label>
@@ -88,33 +91,31 @@
                 <div class="form-group">
                     <div class="form-floating mb-3">
                         <input
-                            type="text"
+                            required
+                            type="password"
                             class="form-control"
-                            id="password"
+                            name="password"
                             placeholder="Pepe"
                         />
-                        <label for="password">Contraseña</label>
+                        <label for="password">Password</label>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="form-floating mb-3">
                         <input
-                            type="text"
+                            required
+                            type="date"
                             class="form-control"
-                            id="birthday"
+                            name="birthday"
                             placeholder="Pepe"
                         />
-                        <label for="birthday">Fecha de nacimiento</label>
+                        <label for="birthday">Birth date</label>
                     </div>
                 </div>
 
                 <button type="submit" class="btn btn-secondary">Submit</button>
             </form>
-            <footer class="mastfoot mt-auto">
-                <div class="inner">
-                    <p>Desarrollado con ❤️ por Jordi, Ignasi y Adán</p>
-                </div>
-            </footer>
         </div>
     </body>
 </html>
+@endsection

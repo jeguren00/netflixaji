@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VideoController;
+use App\Http\Controllers\RegistrationController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,9 +30,11 @@ Route::get('/login', function () {
 
 Route::get('/home', [VideoController::class,'fillhome']);
 
-Route::get('/register', function () {
-    return view('registration');
-});
+//register, send to form route
+Route::get('/register', [RegistrationController::class,'registrationView']);
+//register save the data, from the form
+Route::get('/register/save', [RegistrationController::class,'saveUserIntoDatabase']);
+
 
 Route::get('/login/confirmMail', function () {
     return view('');
@@ -38,10 +42,6 @@ Route::get('/login/confirmMail', function () {
 
 Route::get('/register/pago', function () {
     return view('paymentForm');
-});
-
-Route::get('/register/save', function () {
-    return view('');
 });
 
 Route::get('/register/pago/save', function () {
