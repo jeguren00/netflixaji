@@ -2,43 +2,54 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
-class User extends Authenticatable
+
+
+class User extends Model
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    /**
+     * The database table used by the model.
+     *
+     * @var string
+     */
+    protected $table = 'users';
 
+    /**
+     * The primary key associated with the table.
+     *
+     * @var string
+     */
+    protected $primaryKey = 'userId';
+    
     /**
      * The attributes that are mass assignable.
      *
-     * @var string[]
-     */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+     * @var array
+    */
+    function fillModel($first_name,$surname,$username,$mail,$password,$birthday){
+        $this->first_name = $first_name;
+        $this->surname = $surname;
+        $this->username = $username;
+        $this->mail = $mail;
+        $this->password = $password;
+        $this->birthday = $birthday;
+    }
 
     /**
-     * The attributes that should be hidden for serialization.
+     * Always encrypt the password when it is updated.
      *
-     * @var array
-     */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
+     * @param $value
+    * @return string
+    */
+    public function setPasswordAttribute($value) {
+        $this->attributes['password'] = bcrypt($value);
+    }
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    public function writeToDatabase(){
+        DB::insert('insert into users(userName,name,surname,mail,password,birthDate,type) values (?, ?, ?, ?, ?, ?, ?)', [$this->username, $this->first_name, $this->surname, $this->mail,Hash::make($this->password), $this->birthday, 'normal']);
+    }
 }

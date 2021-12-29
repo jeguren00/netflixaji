@@ -36,7 +36,7 @@
         <h1 class="cover-heading">StreamingAJI</h1>
         <p class="lead">Pelis y series a tutiplén</p>
         <p class="lead">
-          <a href="#" class="btn btn-lg btn-secondary">Regístrate</a>
+          <a href="/register" class="btn btn-lg btn-secondary">Regístrate</a>
           <a href="#" class="btn btn-lg btn-secondary">Entra</a>
         </p>
       </main>

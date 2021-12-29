@@ -23,10 +23,10 @@ class Users extends Migration
             $table->String('password');
             $table->date('birthDate');
             $table->String('type');
-            $table->boolean('block');
-            $table->integer('creditCard');
-            $table->String('creditCardExpirationDate');
-            $table->integer('creditCardCVV');
+            $table->boolean('block')->default(false);
+            $table->integer('creditCard')->default(0);
+            $table->String('creditCardExpirationDate')->default('');
+            $table->integer('creditCardCVV')->default(0);
         });
     }
 

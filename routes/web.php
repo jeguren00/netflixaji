@@ -33,7 +33,11 @@ Route::get('/home', [VideoController::class,'fillhome']);
 //register, send to form route
 Route::get('/register', [RegistrationController::class,'registrationView']);
 //register save the data, from the form
-Route::get('/register/save', [RegistrationController::class,'saveUserIntoDatabase']);
+Route::post('/register/save', [RegistrationController::class,'procesUserData']);
+
+Route::get('/firstHome', function () {
+    return view('homeUnregistered');
+});
 
 
 Route::get('/login/confirmMail', function () {

@@ -38,7 +38,18 @@
             </header>
             <h2 class="cover-heading">Please introduce the requested data</h2>
 
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
+
             <form method="POST" action="/register/save">
+                {{ csrf_field() }} 
                 <div class="form-group">
                     <div class="form-floating mb-3">
                         <input
@@ -82,10 +93,10 @@
                             required
                             type="email"
                             class="form-control"
-                            name="email"
+                            name="mail"
                             placeholder="Pepe@macario.com"
                         />
-                        <label for="email">Email</label>
+                        <label for="mail">Mail</label>
                     </div>
                 </div>
                 <div class="form-group">
