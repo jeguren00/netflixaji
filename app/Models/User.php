@@ -6,10 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
 
-
-class User extends Model
+//user must extend authenticatable to be validated in login
+class User extends Authenticatable
 {
     /**
      * The database table used by the model.
@@ -39,15 +40,15 @@ class User extends Model
         $this->birthday = $birthday;
     }
 
-    /**
-     * Always encrypt the password when it is updated.
-     *
-     * @param $value
-    * @return string
-    */
-    public function setPasswordAttribute($value) {
-        $this->attributes['password'] = bcrypt($value);
-    }
+    // /**
+    //  * Always encrypt the password when it is updated.
+    //  *
+    //  * @param $value
+    // * @return string
+    // */
+    // public function setPasswordAttribute($value) {
+    //     $this->attributes['password'] = bcrypt($value);
+    // }
 
     public function writeToDatabase(){
         DB::insert('insert into users(userName,name,surname,mail,password,birthDate,type) values (?, ?, ?, ?, ?, ?, ?)', [$this->username, $this->first_name, $this->surname, $this->mail,Hash::make($this->password), $this->birthday, 'normal']);

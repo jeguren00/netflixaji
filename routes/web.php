@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\RegistrationController;
@@ -20,9 +21,10 @@ Route::get('/', function () {
 });
 
 //home login regiter users function
-Route::get('/login', function () {
-    return view('loginView');
-});
+Route::get('/login', [LoginController::class,'toLogin']);
+
+//this calls the createSignin() validation function in the LoginController
+Route::post('/custom-login', [LoginController::class, 'validation'])->name('login-validation');
 
 //Route::get('/home', function () {
 //    return view('moviesList');

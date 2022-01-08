@@ -12,6 +12,12 @@
     <title>@yield('title')</title>
 
     <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+            height: 100vh;
+        }
         .nav-item:hover {
             background-color: red;
         }
