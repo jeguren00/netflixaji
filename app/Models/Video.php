@@ -39,4 +39,8 @@ class Video extends Model
         return $query;
     }
 
+    public function scopeSeries($query) {
+        return $query->where('type', 'serie')->where('season', 0)->where('chapter', 0);
+    }
+
 }
