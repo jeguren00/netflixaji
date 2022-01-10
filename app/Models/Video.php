@@ -35,4 +35,8 @@ class Video extends Model
         return $query->where('type',"movie");   
     }
 
+    public function scopeVideos($query) {
+        return $query;
+    }
+
 }

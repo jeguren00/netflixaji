@@ -30,12 +30,16 @@ Route::post('/custom-login', [LoginController::class, 'validation'])->name('logi
 //    return view('moviesList');
 //});
 
-Route::get('/home', [VideoController::class,'fillHome']);
+
+// Route::get('/home', [VideoController::class,'fillHome']);
 
 //register, send to form route
 Route::get('/register', [RegistrationController::class,'registrationView']);
 //register save the data, from the form
 Route::post('/register/save', [RegistrationController::class,'procesUserData']);
+
+Route::get('/home', [VideoController::class,'getVideos']);
+
 
 Route::get('/firstHome', function () {
     return view('homeUnregistered');

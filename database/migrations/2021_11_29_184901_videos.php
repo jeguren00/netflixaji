@@ -24,6 +24,7 @@ class Videos extends Migration
             $table->unsignedInteger('idGenere');
             $table->foreign('idGenere')->references('idGenere')->on('genres');
             $table->string('file');
+            $table->string('trailer');
             $table->integer('season')->default(0);
             $table->integer('chapter')->default(0);
         });
