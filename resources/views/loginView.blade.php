@@ -50,7 +50,7 @@
                         </div>
                         <div class="form-group">
                             <label for="password" class="text-white">Password:</label><br>
-                            <input type="text" name="password" id="password" class="form-control">
+                            <input type="password" name="password" id="password" class="form-control">
                             <span class="text-danger">{{ $errors->first('password') }}</span>
                         </div>
                         <div class="form-group">
