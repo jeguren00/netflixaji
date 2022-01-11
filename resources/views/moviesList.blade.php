@@ -48,7 +48,7 @@
 <!-- Movies Carousel -->
 <div class="container mt-5">
     <div class="row">
-        <h1>Pelis y Series</h1>
+        <h1 id="general">Pelis y Series</h1>
         @forelse ($videos as $video)
             @if (!($video->type === "serie" && $video->season != 0 && $video->chapter != 0))
                 <div class="col col-4 d-flex flex-wrap mt-5">
@@ -67,7 +67,7 @@
         @endforelse
     </div>        
     <div class="row">
-        <h1>Películas</h1>
+        <h1 id="peliculas">Películas</h1>
         @forelse ($pelis as $peli)
         <div class="col col-4 d-flex flex-wrap mt-5">
             <div class="card" style="width: 18rem;">
@@ -84,7 +84,7 @@
         @endforelse
     </div>   
     <div class="row">
-        <h1>Series</h1>
+        <h1 id="series">Series</h1>
         @forelse ($series as $serie)
         <div class="col col-4 d-flex flex-wrap mt-5">
             <div class="card" style="width: 18rem;">

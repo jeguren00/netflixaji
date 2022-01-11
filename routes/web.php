@@ -40,8 +40,11 @@ Route::post('/register/save', [RegistrationController::class,'procesUserData']);
 
 Route::get('/home', [VideoController::class,'getVideos']);
 
+Route::get('/header', function () {
+    return view('layouts');
+});
 
-Route::get('/firstHome', function () {
+Route::get('/start', function () {
     return view('homeUnregistered');
 });
 
@@ -96,7 +99,7 @@ Route::get('/movies', function () {
 });
 
 //admin part
-
+/*
 Route::get('/admin/listUsers', function () {
     return view('adminListUsers');
 });
@@ -112,3 +115,4 @@ Route::get('/adminBlockUser', function () {
 Route::get('/admin/changeBdData', function () {
     return view('adminChangeBdData');
 });
+*/

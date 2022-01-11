@@ -30,17 +30,27 @@
     <header class="p-3 bg-dark text-white">
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">   
+                <a href="{{ url('/home') }}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">   
                     <img src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/64/fa314a/external-movie-cinema-kiranshastry-solid-kiranshastry-3.png"/>
                     <span class="fs-4">StreamingAJI</span>
                 </a>
 
                 <ul class="nav nav-pills">
-                    <li class="nav-item"><a href="#" class="nav-link text-white" aria-current="page">Inicio</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link text-white">Películas</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link text-white">Series</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link text-white">Mis favoritas</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link text-white">Mi perfil</a></li>
+                    <li class="nav-item"><a href="{{ url('/home#general') }}" class="nav-link text-white" aria-current="page">Inicio</a></li>
+                    <li class="nav-item"><a href="{{ url('/home#peliculas') }}" class="nav-link text-white">Películas</a></li>
+                    <li class="nav-item"><a href="{{ url('/home#series') }}" class="nav-link text-white">Series</a></li>
+                    <!--<li class="nav-item"><a href="{{ url('/home') }}" class="nav-link text-white">Mis favoritas</a></li>-->
+                    <!--in case user hasn't logged in -->
+                    @guest
+                    <li class="nav-item"><a href="{{ url('/start') }}" class="nav-link text-white">Entrar</a></li>
+                    @endguest
+
+                    <!--in case user has logged in -->
+                    @auth
+                    <li class="nav-item"><a class="nav-link text-white">Hola (username)</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link text-white">Salir</a></li>
+                    @endauth
+                    <!--<li class="nav-item"><a href="{{ url('/user/viewData') }}" class="nav-link text-white">Mi perfil</a></li>-->
                 </ul>
             </div>
         </div>  
@@ -56,13 +66,23 @@
             <img src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/64/fa314a/external-movie-cinema-kiranshastry-solid-kiranshastry-3.png"/>
             </a>
 
-            <ul class="nav col-md-4 justify-content-end">
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Inicio</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Películas</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Series</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Mis favoritas</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Mi perfil</a></li>
-            </ul>
+            <ul class="nav nav-pills">
+                    <li class="nav-item"><a href="{{ url('/home#general') }}" class="nav-link text-white" aria-current="page">Inicio</a></li>
+                    <li class="nav-item"><a href="{{ url('/home#peliculas') }}" class="nav-link text-white">Películas</a></li>
+                    <li class="nav-item"><a href="{{ url('/home#series') }}" class="nav-link text-white">Series</a></li>
+                    <!--<li class="nav-item"><a href="{{ url('/home') }}" class="nav-link text-white">Mis favoritas</a></li>-->
+                    <!--in case user hasn't logged in -->
+                    @guest
+                    <li class="nav-item"><a href="{{ url('/start') }}" class="nav-link text-white">Entrar</a></li>
+                    @endguest
+
+                    <!--in case user has logged in -->
+                    @auth
+                    <li class="nav-item"><a class="nav-link text-white">Hola (username)</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link text-white">Salir</a></li>
+                    @endauth
+                    <!--<li class="nav-item"><a href="{{ url('/user/viewData') }}" class="nav-link text-white">Mi perfil</a></li>-->
+                </ul>
         </footer>
     </div>
 
