@@ -85,17 +85,19 @@
     </div>   
     <div class="row">
         <h1 id="series">Series</h1>
-        @forelse ($series as $serie)
-        <div class="col col-4 d-flex flex-wrap mt-5">
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="{{ $serie->image }}" alt="Card image cap">
-                <div class="card-body">
-                    <h3 class="card-title">{{ $serie->title }}</h3>
-                    <p class="card-text">{{ $serie->sinopsis }}</p>
-                    <a href="#" class="btn btn-primary">Ver serie</a>
+        @forelse ($videos as $video)
+            @if ($video->type === "serie" && $video->season == 0 && $video->chapter == 0))
+                <div class="col col-4 d-flex flex-wrap mt-5">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="{{ $video->image }}" alt="Card image cap">
+                        <div class="card-body">
+                            <h3 class="card-title">{{ $video->title }}</h3>
+                            <p class="card-text">{{ $video->sinopsis }}</p>
+                            <a href="#" class="btn btn-primary">Ver serie</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
+            @endif
         @empty
             <p>No hay series</p>
         @endforelse

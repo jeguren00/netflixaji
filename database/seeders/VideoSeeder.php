@@ -69,6 +69,24 @@ class VideoSeeder extends Seeder
             [
                 'title'     => 'Black Mirror', 
                 'year'      => 2011 , 
+                'sinopsis'  => "Black Mirror es una producción británica desarrollada por Charlie Brooker ('Dead set: Muerte en directo'), 
+                                Una serie de episodios independientes entre sí y, con un reparto y tramas totalmente diferentes, 
+                                cuyo único punto común es el poder de las nuevas tecnologías para mover el mundo.",
+                'duration'  => "" ,
+                'type'      => "serie",
+                'image'     => "./img/blackMirror.jpg" ,
+                'idGenere'  => "1" ,
+                'file'      => "./public/video/blackMirror11.avi",
+                'trailer'   => "",
+                'season'    => "0",
+                'chapter'   => "0"
+            ]
+        );
+
+        DB::table('videos')->insert(
+            [
+                'title'     => 'Black Mirror', 
+                'year'      => 2011 , 
                 'sinopsis'  => "https://en.wikipedia.org/wiki/Black_Mirror",
                 'duration'  => "" ,
                 'type'      => "serie",
