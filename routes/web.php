@@ -1,9 +1,6 @@
 <?php
 
-use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\VideoController;
-use App\Http\Controllers\RegistrationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,95 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//home login regiter users function
-Route::get('/login', [LoginController::class,'toLogin']);
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
-//this calls the createSignin() validation function in the LoginController
-Route::post('/custom-login', [LoginController::class, 'validation'])->name('login-validation');
-
-//Route::get('/home', function () {
-//    return view('moviesList');
-//});
-
-
-// Route::get('/home', [VideoController::class,'fillHome']);
-
-//register, send to form route
-Route::get('/register', [RegistrationController::class,'registrationView']);
-//register save the data, from the form
-Route::post('/register/save', [RegistrationController::class,'procesUserData']);
-
-Route::get('/home', [VideoController::class,'getVideos']);
-
-
-Route::get('/firstHome', function () {
-    return view('homeUnregistered');
-});
-
-
-Route::get('/login/confirmMail', function () {
-    return view('');
-});
-
-Route::get('/register/pago', function () {
-    return view('paymentForm');
-});
-
-Route::get('/register/pago/save', function () {
-    return view('');
-});
-
-//THE streaming platform
-Route::get('/userHome', function () {
-    return view('userHome');
-});
-
-Route::get('/userHome', function () {
-    return view('userHome');
-});
-
-Route::get('/stream', function () {
-    return view('viewStreaming');
-});
-
-Route::get('/serach?AAAAAA', function () {
-    return view('searchResults');
-});
-
-Route::get('/favourites', function () {
-    return view('userFavourites');
-});
-
-Route::get('/user/changeData', function () {
-    return view('userDataChangerForm');
-}); 
-
-Route::get('/user/viewData', function () {
-    return view('userDataView');
-}); 
-
-Route::get('/user/changeBdData', function () {
-    return view('');
-});
-
-Route::get('/movies', function () {
-    return view('moviesList');
-});
-
-//admin part
-
-Route::get('/admin/listUsers', function () {
-    return view('adminListUsers');
-});
-
-Route::get('/admin/addVideo', function () {
-    return view('adminAddVideo');
-});
-
-Route::get('/adminBlockUser', function () {
-    return view('adminBlockUser');
-});
-
-Route::get('/admin/changeBdData', function () {
-    return view('adminChangeBdData');
-});
+require __DIR__.'/auth.php';
