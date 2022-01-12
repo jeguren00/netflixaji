@@ -17,8 +17,9 @@ class UserSeeder extends Seeder
     {
         //users
         DB::table('users')->insert([
+            'userName' => 'jgarcia',
         'name' => 'jordi', 
-        // 'surname' => 'garcia', 
+        'surname' => 'garcia', 
         'email' => 'jeguren@gmail.com',
         'password' => Hash::make('jordi'),
         // 'birthDate' => now(),
@@ -29,8 +30,9 @@ class UserSeeder extends Seeder
         'creditCardCVV' => '339' ]);
 
         DB::table('users')->insert([
+            'userName' => 'acuesta',
         'name' => 'adan', 
-        // 'surname' => 'cuesta', 
+        'surname' => 'cuesta', 
         'email' => 'acuesta@gmail.com',
         'password' => Hash::make('adan'),
         // 'birthDate' => now(),
@@ -41,12 +43,12 @@ class UserSeeder extends Seeder
         'creditCardCVV' => '339' ]);
 
         DB::table('users')->insert([
+            'userName' => 'ibrugada',
         'name' => 'ignasi', 
-        // 'surname' => 'brugada', 
+         'surname' => 'brugada', 
         'email' => 'ibrugada@gmail.com',
         'password' => Hash::make('ignasi'),
         // 'birthDate' => now(),
-        // 'type' => 'normal',
         'block' => false,
         'creditCard' => 14231 ,
         'creditCardExpirationDate' => '23/12',
