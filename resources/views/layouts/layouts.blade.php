@@ -53,6 +53,22 @@
                     <!--<li class="nav-item"><a href="{{ url('/user/viewData') }}" class="nav-link text-white">Mi perfil</a></li>-->
                 </ul>
             </div>
+            <br>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" href="/getGenres" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Genres</button>
+                    <div class="dropdown-menu">
+                    @forelse ($generes as $genere)
+                        <a class="dropdown-item" href="/search/{{$genere->name}}">{{$genere->name}}</a>
+                    @empty
+                        <p>No hay generos</p>
+                    @endforelse
+                    </div>
+                </div>
+                <form method="POST" action="/search">
+                    <input type="text" aria-label="Text input with dropdown button"><input type="submit" value="Buscar" class="btn btn-primary"></input>
+                </form>
+            </div>
         </div>  
     </header>
 

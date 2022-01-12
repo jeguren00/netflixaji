@@ -4,6 +4,8 @@ use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\genreController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -40,13 +42,12 @@ Route::post('/register/save', [RegistrationController::class,'procesUserData']);
 
 Route::get('/home', [VideoController::class,'getVideos']);
 
-Route::get('/header', function () {
-    return view('layouts');
-});
+Route::post('/search/{genre}', [searchController::class,'getResultsWithGen']);
 
-Route::get('/start', function () {
-    return view('homeUnregistered');
-});
+Route::post('/search', [searchController::class,'getResultsWithText']);
+
+//route to fill dropdown, with the genres of the database
+Route::get('/start', [genreController::class,'getGenres']);
 
 
 Route::get('/login/confirmMail', function () {
@@ -74,9 +75,7 @@ Route::get('/stream', function () {
     return view('viewStreaming');
 });
 
-Route::get('/serach?AAAAAA', function () {
-    return view('searchResults');
-});
+
 
 Route::get('/favourites', function () {
     return view('userFavourites');
