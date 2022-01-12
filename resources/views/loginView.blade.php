@@ -36,30 +36,40 @@
         <div id="login-row" class="row justify-content-center align-items-center">
             <div id="login-column" class="col-md-6">
                 <div id="login-box" class="col-md-12">
-                    <form id="login-form" class="form" action="{{ route('login-validation') }}" method="post">
+                    <form id="login-form" class="form" action="{{ route('login') }}" method="post">
 
                         @csrf
                         @error('not_valid')
                         <p>{{$message}}</p>
                         @enderror
                         <div class="form-group">
-                            <label for="userName" class="text-white">Username:</label><br>
-                            <input type="text" name="userName" id="username" class="form-control">
-                            <span class="text-danger">{{ $errors->first('userName') }}</span>
+                            <label for="email" class="text-white">Email:</label><br>
+                            <input type="text" name="email" id="email" class="form-control">
 
                         </div>
                         <div class="form-group">
                             <label for="password" class="text-white">Password:</label><br>
                             <input type="password" name="password" id="password" class="form-control">
-                            <span class="text-danger">{{ $errors->first('password') }}</span>
                         </div>
-                        <div class="form-group">
-                            <label for="remember-me" class="text-white"><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
-                            <input type="submit" name="submit" class="btn btn-light btn-md " value="submit">
-                        </div>
-                        <div id="register-link" class="text-right">
-                            <a href="/register" class="text-white">Register here</a>
-                        </div>
+                   <!-- Remember Me -->
+            <div class="block mt-4">
+                <label for="remember_me" class="inline-flex items-center">
+                    <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
+                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                </label>
+            </div>
+
+            <div class="flex items-center justify-end mt-4">
+                @if (Route::has('password.request'))
+                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
+                        {{ __('Forgot your password?') }}
+                    </a>
+                @endif
+
+                <button class="btn btn-light btn-md ">
+                    {{ __('Log in') }}
+    </button>
+            </div>
                     </form>
                 </div>
             </div>
