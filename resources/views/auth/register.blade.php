@@ -1,68 +1,87 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+@extends('layouts/layouts')
+@section('title', 'Movies')
 
-    
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+@section('content')
+<!DOCTYPE html>
+<html lang="en">
+
+<body class="text-center">
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+        <header class="masthead mb-auto">
+            <div class="inner">
+                <h3 class="masthead-brand">
+                    <a href="home_sin_login.php">StreamingAJI</a>
+                </h3>
+            </div>
+        </header>
+        <h2 class="cover-heading">Please introduce the requested data</h2>
+
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
 
         <form method="POST" action="{{ route('register') }}">
             @csrf
-
-            <div>
-                <x-label for="name" :value="__('Name')" />
-
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
+            <div class="form-group">
+                <div class="form-floating mb-3">
+                    <input required type="text" class="form-control" name="name" placeholder="Pepe" />
+                    <label for="nombre">Name</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-floating mb-3">
+                    <input required type="text" class="form-control" name="surname" placeholder="Pepe" />
+                    <label for="apellidos">Surname</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-floating mb-3">
+                    <input required type="text" class="form-control" name="userName" placeholder="Pepe" />
+                    <label for="userName">Username</label>
+                </div>
             </div>
 
-            <div>
-                <x-label for="surname" :value="__('Surname')" />
-
-                <x-input id="surname" class="block mt-1 w-full" type="text" name="surname" :value="old('surname')" required />
+            <div class="form-group">
+                <div class="form-floating mb-3">
+                    <input required type="email" class="form-control" name="email" placeholder="Pepe@macario.com" />
+                    <label for="email">Mail</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-floating mb-3">
+                    <input required type="password" class="form-control" name="password" placeholder="Pepe" />
+                    <label for="password">Password</label>
+                </div>
             </div>
 
-            <div>
-                <x-label for="userName" :value="__('Username')" />
+            <div class="form-group">
+                <div class="form-floating mb-3">
 
-                <x-input id="userName" class="block mt-1 w-full" type="text" name="userName" :value="old('userName')" required />
+
+                    <input id="password_confirmation" class="form-control" type="password" name="password_confirmation" required />
+                    <label for="password_confirmation">Confirm password</label>
+                </div>
             </div>
 
-            <div class="mt-4">
-                <x-label for="email" :value="__('Email')" />
-
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-            </div>
-
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
-
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="new-password" />
-            </div>
-
-            <div class="mt-4">
-                <x-label for="password_confirmation" :value="__('Confirm Password')" />
-
-                <x-input id="password_confirmation" class="block mt-1 w-full"
-                                type="password"
-                                name="password_confirmation" required />
-            </div>
-
+            <button type="submit" class="btn btn-secondary">Submit</button>
             <div class="flex items-center justify-end mt-4">
                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
                     {{ __('Already registered?') }}
                 </a>
 
-                <x-button class="ml-4">
+                <button class="ml-4">
                     {{ __('Register') }}
-                </x-button>
+                </button>
             </div>
         </form>
-    </x-auth-card>
-</x-guest-layout> 
+    </div>
+</body>
 
+</html>
+@endsection
