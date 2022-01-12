@@ -28,19 +28,13 @@
     </head>
 
     <body class="text-center">
-            <h2 class="cover-heading">Título del video</h2>
+            <h2 class="cover-heading">{{ $video[0]->title }}</h2>
 
             <div class="embed-responsive embed-responsive-4by3">
-    <video width="320" height="240" controls>
-        <source src="movie.mp4" type="video/mp4">
-    </video>
-</div>
-
-            <footer class="mastfoot mt-auto">
-                <div class="inner">
-                    <p>Desarrollado con ❤️ por Jordi, Ignasi y Adán</p>
-                </div>
-            </footer>
+                <video class="img-fluid w-80" style="height: 40em" controls>
+                    <source src="{{ $video[0]->file }}" type="video/mp4" />
+                </video>
+            </div>
         </div>
     </body>
 </html>

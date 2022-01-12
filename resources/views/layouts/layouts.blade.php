@@ -39,7 +39,7 @@
                     <li class="nav-item"><a href="{{ url('/home#general') }}" class="nav-link text-white" aria-current="page">Inicio</a></li>
                     <li class="nav-item"><a href="{{ url('/home#peliculas') }}" class="nav-link text-white">Películas</a></li>
                     <li class="nav-item"><a href="{{ url('/home#series') }}" class="nav-link text-white">Series</a></li>
-                    <!--<li class="nav-item"><a href="{{ url('/home') }}" class="nav-link text-white">Mis favoritas</a></li>-->
+                    <li class="nav-item"><a href="{{ url('/favourites') }}" class="nav-link text-white">Mis favoritas</a></li>
                     <!--in case user hasn't logged in -->
                     @guest
                     <li class="nav-item"><a href="{{ url('/start') }}" class="nav-link text-white">Entrar</a></li>
@@ -70,7 +70,7 @@
                     <li class="nav-item"><a href="{{ url('/home#general') }}" class="nav-link text-white" aria-current="page">Inicio</a></li>
                     <li class="nav-item"><a href="{{ url('/home#peliculas') }}" class="nav-link text-white">Películas</a></li>
                     <li class="nav-item"><a href="{{ url('/home#series') }}" class="nav-link text-white">Series</a></li>
-                    <!--<li class="nav-item"><a href="{{ url('/home') }}" class="nav-link text-white">Mis favoritas</a></li>-->
+                    <li class="nav-item"><a href="{{ url('/favourites') }}" class="nav-link text-white">Mis favoritas</a></li>
                     <!--in case user hasn't logged in -->
                     @guest
                     <li class="nav-item"><a href="{{ url('/start') }}" class="nav-link text-white">Entrar</a></li>

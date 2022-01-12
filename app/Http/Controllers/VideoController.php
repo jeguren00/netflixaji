@@ -31,4 +31,17 @@ class VideoController extends Controller
 
         return view("moviesList")->with(['videos' => $videos])->with(['pelis' => $pelis])->with(['series' => $series]);
     }
+
+    public function viewStream() {
+        $id = $_GET['id'];
+        
+        $video = $this->video->findById($this->query, $id)->get();
+        return view("viewStreaming")->with(['video' => $video]);
+    }
+
+    public function getFavourites() {
+        // $userId = Auth::user()->userId;
+
+        return view('userFavourites'); // ->with(['userId' => $userId]);
+    }
 }

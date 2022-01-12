@@ -70,17 +70,13 @@ Route::get('/userHome', function () {
     return view('userHome');
 });
 
-Route::get('/stream', function () {
-    return view('viewStreaming');
-});
+Route::get('/stream',[VideoController::class,'viewStream']);
 
 Route::get('/serach?AAAAAA', function () {
     return view('searchResults');
 });
 
-Route::get('/favourites', function () {
-    return view('userFavourites');
-});
+Route::get('/favourites',[VideoController::class, 'getFavourites']);
 
 Route::get('/user/changeData', function () {
     return view('userDataChangerForm');

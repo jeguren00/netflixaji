@@ -43,4 +43,8 @@ class Video extends Model
         return $query->where('type', 'serie')->where('season', 0)->where('chapter', 0);
     }
 
+    public function findById($query, $id) {
+        return $query->where('idVideo', $id);
+    }
+
 }
