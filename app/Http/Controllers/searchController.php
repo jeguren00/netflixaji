@@ -33,9 +33,8 @@ class searchController extends Controller
 
     public function getResultsWithText(Request $request) {
         $inputText = $request->input('searchBox');
-        $videosLikeTitle = $this->video->scopeVideos($this->query)->where('title',$inputText)->get();
+        $videosLikeTitle = $this->video->scopeVideos($this->query)->where('title', 'like', '%'.$inputText.'%')->get();
 
         echo $videosLikeTitle;
     }
-    
 }
