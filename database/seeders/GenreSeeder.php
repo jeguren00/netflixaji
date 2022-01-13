@@ -15,7 +15,16 @@ class GenreSeeder extends Seeder
     public function run()
     {
         //genere
-        DB::table('genres')->insert(['name' => 'science fiction', 
-        'description' => 'https://en.wikipedia.org/wiki/Science_fiction']);
+        DB::table('genres')->insert(
+            ['name' => 'science fiction', 
+            'description' => 'https://en.wikipedia.org/wiki/Science_fiction'
+            ]
+        );
+
+        DB::table('genres')->insert(
+            ['name' => 'action', 
+            'description' => 'action'
+            ]
+        );
     }
 }

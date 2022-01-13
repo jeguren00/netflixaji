@@ -27,7 +27,7 @@ class VideoController extends Controller
     }
 
     public function fillHome() {
-        $databaseQuery = $this->video->scopePelis($this->query)->get();
+        $databaseQuery = $this->video->scopeVideos($this->query)->get();
         return view("moviesList")->with(['videos' => $databaseQuery ]);
     }
 

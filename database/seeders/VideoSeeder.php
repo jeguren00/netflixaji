@@ -64,6 +64,20 @@ class VideoSeeder extends Seeder
             ]
         );
 
+        DB::table('videos')->insert(
+            [
+                'title'     => 'Indiana Jones and the Last Crusade',
+                'year'      => 1989 , 
+                'sinopsis'  => "a",
+                'duration'  => "123" ,
+                'type'      => "movie",
+                'image'     => "./img/indiJonesCrussade.jpg" ,
+                'idGenere'  => "2" ,
+                'file'      => "",
+                'trailer'   => ""
+            ]
+        );
+
         //serie
         DB::table('videos')->insert(
             [
