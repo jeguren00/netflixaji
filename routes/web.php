@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\genreController;
+use App\Http\Controllers\searchController;
 
 
 /*
@@ -28,12 +29,6 @@ Route::get('/login', [LoginController::class,'toLogin']);
 //this calls the createSignin() validation function in the LoginController
 Route::post('/custom-login', [LoginController::class, 'validation'])->name('login-validation');
 
-//Route::get('/home', function () {
-//    return view('moviesList');
-//});
-
-
-// Route::get('/home', [VideoController::class,'fillHome']);
 
 //register, send to form route
 Route::get('/register', [RegistrationController::class,'registrationView']);
@@ -42,7 +37,7 @@ Route::post('/register/save', [RegistrationController::class,'procesUserData']);
 
 Route::get('/home', [VideoController::class,'getVideos']);
 
-Route::post('/search/{genre}', [searchController::class,'getResultsWithGen']);
+Route::get('/search/{genre}', [searchController::class,'getResultsWithGen']);
 
 Route::post('/search', [searchController::class,'getResultsWithText']);
 

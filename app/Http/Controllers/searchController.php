@@ -13,11 +13,12 @@ class searchController extends Controller
     }
 
     public function getResultsWithGen($genre) {
-        
+        echo $genre;
     }
 
-    public function getResultsWithText($inputText) {
-
+    public function getResultsWithText(Request $request) {
+        $inputText = $request->input('searchBox');
+        echo $inputText;
     }
     
 }

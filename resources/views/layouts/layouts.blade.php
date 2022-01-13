@@ -66,7 +66,8 @@
                     </div>
                 </div>
                 <form method="POST" action="/search">
-                    <input type="text" aria-label="Text input with dropdown button"><input type="submit" value="Buscar" class="btn btn-primary"></input>
+                    {{ csrf_field() }} 
+                    <input type="text" name="searchBox" aria-label="Text input with dropdown button"><input type="submit" value="Buscar" class="btn btn-primary"></input>
                 </form>
             </div>
         </div>  
