@@ -19,8 +19,11 @@ class genreController extends Controller
 
     public function getGenres() {
         $generes = $this->genres->genres($this->query)->get(); 
-        
         return view("homeUnregistered")->with(['generes' => $generes]);
+    }
 
+    public function getGenresSearch() {
+        $generes = $this->genres->genres($this->query)->get(); 
+        return view("searchResults")->with(['generes' => $generes]);
     }
 }

@@ -20,21 +20,26 @@ class searchController extends Controller
         $this->genre = new genre();
         $this->query = $this->video->query();
         $this->genreQuery = $this->genre->query();
-
-
     }
 
     public function getResultsWithGen($genre) {
         $idOfGenreChosed = $this->genre->scopeGenres($this->genreQuery)->where('name', $genre)->value('idGenere');
-        $videosOfThisGenre = $this->video->scopeVideos($this->query)->where('idGenere',$idOfGenreChosed)->get();
 
-        echo $videosOfThisGenre;
+        $moviesOfThisGenre = $this->video->pelis($this->query)->where('idGenere',$idOfGenreChosed)->get();
+        $seriesOfThisGenre = $this->video->series($this->query)->where('idGenere',$idOfGenreChosed)->get();
+
+        $generes = $this->genre->genres($this->query)->get(); 
+        return view("searchResults")->with(['movies' => $moviesOfThisGenre ])->with(['series' => $seriesOfThisGenre ])->with(['generes' => $generes])->with(['searchPattern' => $genre]);
+
     }
 
     public function getResultsWithText(Request $request) {
         $inputText = $request->input('searchBox');
-        $videosLikeTitle = $this->video->scopeVideos($this->query)->where('title', 'like', '%'.$inputText.'%')->get();
+        $moviesOfThisGenre = $this->video->pelis($this->query)->where('title', 'like', '%'.$inputText.'%')->get();
+        $seriesOfThisGenre = $this->video->series($this->query)->where('title', 'like', '%'.$inputText.'%')->get();
 
-        echo $videosLikeTitle;
+        $generes = $this->genre->genres($this->query)->get(); 
+
+        return view("searchResults")->with(['movies' => $moviesOfThisGenre ])->with(['series' => $seriesOfThisGenre ])->with(['generes' => $generes])->with(['searchPattern' => $inputText]);
     }
 }
