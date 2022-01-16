@@ -46,7 +46,6 @@
                             <label for="userName" class="text-white">Username:</label><br>
                             <input type="text" name="userName" id="username" class="form-control">
                             <span class="text-danger">{{ $errors->first('userName') }}</span>
-
                         </div>
                         <div class="form-group">
                             <label for="password" class="text-white">Password:</label><br>
