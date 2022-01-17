@@ -19,10 +19,10 @@ use App\Http\Controllers\searchController;
 */
 
 //home login regiter users function
-Route::get('/login', [LoginController::class,'toLogin']);
+//Route::get('/login', [LoginController::class,'toLogin']);
 
 //this calls the createSignin() validation function in the LoginController
-Route::post('/custom-login', [LoginController::class, 'validation'])->name('login-validation');
+//Route::post('/custom-login', [LoginController::class, 'validation'])->name('login-validation');
 
 
 //register, send to form route
@@ -30,7 +30,10 @@ Route::get('/register', [RegistrationController::class,'registrationView']);
 //register save the data, from the form
 Route::post('/register/save', [RegistrationController::class,'procesUserData']);
 
+//init route
 Route::get('/home', [VideoController::class,'getVideos']);
+Route::get('/', [VideoController::class,'getVideos']);
+
 
 Route::get('/search/{genre}', [searchController::class,'getResultsWithGen']);
 
@@ -105,9 +108,6 @@ Route::get('/admin/changeBdData', function () {
     return view('adminChangeBdData');
 });
 */
-Route::get('/', function () {
-    return view('moviesList');
-});
 
 Route::get('/home', function () {
     return view('moviesList');

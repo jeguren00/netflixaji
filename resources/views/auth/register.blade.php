@@ -1,7 +1,3 @@
-@extends('layouts/layouts')
-@section('title', 'Movies')
-
-@section('content')
 <!DOCTYPE html>
 <html lang="en">
 
@@ -74,14 +70,9 @@
                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
                     {{ __('Already registered?') }}
                 </a>
-
-                <button class="ml-4">
-                    {{ __('Register') }}
-                </button>
             </div>
         </form>
     </div>
 </body>
 
 </html>
-@endsection

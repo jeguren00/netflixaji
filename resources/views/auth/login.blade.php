@@ -1,8 +1,4 @@
-@extends('layouts/layouts')
-@section('title', 'Login - StreamingAJI')
-
-@section('content')
-<!-- <head>
+ <head>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -29,7 +25,7 @@
     </style>
 </head>
 
-<body> -->
+<body>
 <div id="login">
     <h3 class="text-center text-white pt-5">Login StreamingAJI</h3>
     <div class="container">
@@ -76,4 +72,3 @@
         </div>
     </div>
 </div>
-@endsection
