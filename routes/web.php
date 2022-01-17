@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\RegistrationController;
@@ -18,10 +17,6 @@ use App\Http\Controllers\searchController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
 
 //home login regiter users function
 Route::get('/login', [LoginController::class,'toLogin']);
@@ -110,3 +105,12 @@ Route::get('/admin/changeBdData', function () {
     return view('adminChangeBdData');
 });
 */
+Route::get('/', function () {
+    return view('moviesList');
+});
+
+Route::get('/home', function () {
+    return view('moviesList');
+})->middleware(['auth'])->name('home');
+
+require __DIR__.'/auth.php';

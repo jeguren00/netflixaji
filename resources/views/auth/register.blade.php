@@ -42,15 +42,15 @@
             </div>
             <div class="form-group">
                 <div class="form-floating mb-3">
-                    <input required type="text" class="form-control" name="username" placeholder="Pepe" />
-                    <label for="username">Username</label>
+                    <input required type="text" class="form-control" name="userName" placeholder="Pepe" />
+                    <label for="userName">Username</label>
                 </div>
             </div>
 
             <div class="form-group">
                 <div class="form-floating mb-3">
-                    <input required type="email" class="form-control" name="mail" placeholder="Pepe@macario.com" />
-                    <label for="mail">Mail</label>
+                    <input required type="email" class="form-control" name="email" placeholder="Pepe@macario.com" />
+                    <label for="email">Mail</label>
                 </div>
             </div>
             <div class="form-group">

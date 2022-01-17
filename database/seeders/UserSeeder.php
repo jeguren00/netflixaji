@@ -16,37 +16,39 @@ class UserSeeder extends Seeder
     public function run()
     {
         //users
-        DB::table('users')->insert(['userName' => 'jgarcia', 
+        DB::table('users')->insert([
+            'userName' => 'jgarcia',
         'name' => 'jordi', 
         'surname' => 'garcia', 
-        'mail' => 'jeguren@gmail.com',
+        'email' => 'jeguren@gmail.com',
         'password' => Hash::make('jordi'),
-        'birthDate' => now(),
-        'type' => 'normal',
+        // 'birthDate' => now(),
+        // 'type' => 'normal',
         'block' => false,
         'creditCard' => 14231 ,
         'creditCardExpirationDate' => '23/12',
         'creditCardCVV' => '339' ]);
 
-        DB::table('users')->insert(['userName' => 'acuesta', 
+        DB::table('users')->insert([
+            'userName' => 'acuesta',
         'name' => 'adan', 
         'surname' => 'cuesta', 
-        'mail' => 'acuesta@gmail.com',
+        'email' => 'acuesta@gmail.com',
         'password' => Hash::make('adan'),
-        'birthDate' => now(),
-        'type' => 'normal',
+        // 'birthDate' => now(),
+        // 'type' => 'normal',
         'block' => false,
         'creditCard' => 14231 ,
         'creditCardExpirationDate' => '23/12',
         'creditCardCVV' => '339' ]);
 
-        DB::table('users')->insert(['userName' => 'ibrugada', 
+        DB::table('users')->insert([
+            'userName' => 'ibrugada',
         'name' => 'ignasi', 
-        'surname' => 'brugada', 
-        'mail' => 'ibrugada@gmail.com',
+         'surname' => 'brugada', 
+        'email' => 'ibrugada@gmail.com',
         'password' => Hash::make('ignasi'),
-        'birthDate' => now(),
-        'type' => 'normal',
+        // 'birthDate' => now(),
         'block' => false,
         'creditCard' => 14231 ,
         'creditCardExpirationDate' => '23/12',
