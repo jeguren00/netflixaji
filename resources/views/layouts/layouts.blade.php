@@ -56,7 +56,7 @@
             <br>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" href="/getGenres" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Genres</button>
+                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Genres</button>
                     <div class="dropdown-menu">
                     @forelse ($generes as $genere)
                         <a class="dropdown-item" href="/search/{{$genere->name}}">{{$genere->name}}</a>
@@ -66,7 +66,7 @@
                     </div>
                 </div>
                 <form method="POST" action="/search">
-                    {{ csrf_field() }} 
+                    {{ csrf_field() }}
                     <input type="text" name="searchBox" aria-label="Text input with dropdown button"><input type="submit" value="Buscar" class="btn btn-primary"></input>
                 </form>
             </div>
