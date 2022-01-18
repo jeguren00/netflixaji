@@ -33,11 +33,11 @@
                     @if ($serie->season == 0 && $serie->chapter == 0)
                         <div class="col col-4 d-flex flex-wrap mt-5">
                             <div class="card" style="width: 18rem;">
-                                <img class="card-img-top" src="{{ asset($peli->image) }}" alt="Card image cap">
+                                <img class="card-img-top" src="{{ asset($serie->image) }}" alt="Card image cap">
                                 <div class="card-body">
                                     <h3 class="card-title">{{ $serie->title }}</h3>
                                     <p class="card-text">{{ $serie->sinopsis }}</p>
-                                    <a href="#" class="btn btn-primary">Ver película</a>
+                                    <a href="#" class="btn btn-primary">Ver Serie</a>
                                 </div>
                             </div>
                         </div>
