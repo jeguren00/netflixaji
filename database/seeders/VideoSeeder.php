@@ -26,7 +26,6 @@ class VideoSeeder extends Seeder
                 'duration'  => "107" ,
                 'type'      => "movie",
                 'image'     => "./img/backToTheFuture.jpg" ,
-                'idGenere'  => "1" ,
                 'file'      => "",
                 'trailer'   => "/videos/trailerRegresoAlFuturo.mp4"
             ]
@@ -42,7 +41,6 @@ class VideoSeeder extends Seeder
                 'duration'  => "128" ,
                 'type'      => "movie",
                 'image'     => "./img/jurassicPark.jpg" ,
-                'idGenere'  => "1" ,
                 'file'      => "",
                 'trailer'   => "/videos/trailerJurasikPark.mp4"
             ]
@@ -58,7 +56,6 @@ class VideoSeeder extends Seeder
                 'duration'  => "169" ,
                 'type'      => "movie",
                 'image'     => "./img/interstellar.jpg" ,
-                'idGenere'  => "1" ,
                 'file'      => "",
                 'trailer'   => "/videos/trailerInterstellar.mp4"
             ]
@@ -72,7 +69,6 @@ class VideoSeeder extends Seeder
                 'duration'  => "123" ,
                 'type'      => "movie",
                 'image'     => "./img/indiJonesCrussade.jpg" ,
-                'idGenere'  => "2" ,
                 'file'      => "",
                 'trailer'   => ""
             ]
@@ -89,7 +85,6 @@ class VideoSeeder extends Seeder
                 'duration'  => "" ,
                 'type'      => "serie",
                 'image'     => "./img/blackMirror.jpg" ,
-                'idGenere'  => "1" ,
                 'file'      => "./public/video/blackMirror11.avi",
                 'trailer'   => "",
                 'season'    => "0",
@@ -105,7 +100,6 @@ class VideoSeeder extends Seeder
                 'duration'  => "" ,
                 'type'      => "serie",
                 'image'     => "./img/blackMirror.jpg" ,
-                'idGenere'  => "1" ,
                 'file'      => "./public/video/blackMirror11.avi",
                 'trailer'   => "",
                 'season'    => "1",
@@ -121,7 +115,6 @@ class VideoSeeder extends Seeder
                 'duration'  => "" ,
                 'type'      => "serie",
                 'image'     => "./img/blackMirror.jpg" ,
-                'idGenere'  => "1" ,
                 'file'      => "./public/video/blackMirror12.avi",
                 'trailer'   => "",
                 'season'    => "1",
@@ -137,7 +130,6 @@ class VideoSeeder extends Seeder
                 'duration'  => "" ,
                 'type'      => "serie",
                 'image'     => "./img/blackMirror.jpg" ,
-                'idGenere'  => "1" ,
                 'file'      => "./public/video/blackMirror13.avi",
                 'trailer'   => "",
                 'season'    => "1",
