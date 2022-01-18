@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 @extends('layouts/layouts')
 @section('title', 'Movies')
 
@@ -28,7 +27,7 @@
     </head>
 
     <body class="text-center">
-            <h2 class="cover-heading">{{ $video[0]->title }}</h2>
+            <h2 class="cover-heading m-5">{{ $video[0]->title }}</h2>
 
             <div class="embed-responsive embed-responsive-4by3">
                 <video class="img-fluid w-80" style="height: 40em" controls>

@@ -94,6 +94,8 @@ Route::get('/movies', function () {
     return view('moviesList');
 });
 
+Route::get('/chapters', [VideoController::class, 'listChapters']);
+
 //admin part
 /*
 Route::get('/admin/listUsers', function () {

@@ -34,9 +34,20 @@ class VideoController extends Controller
 
     public function viewStream() {
         $id = $_GET['id'];
-        
         $video = $this->video->findById($this->query, $id)->get();
+        
         return view("viewStreaming")->with(['video' => $video]);
+    }
+
+    public function listChapters() {
+        $id = $_GET['id'];
+        $video = $this->video->findById($this->query, $id)->get();
+        $title=$video[0]->title;
+        
+        $chapters = $this->video->findByTitle($title)->orderBy('season')->orderBy('chapter')->get();
+        $seasons = $chapters->last()->season;
+
+        return view("serie")->with(['chapters' => $chapters])->with(['seasons' => $seasons]);
     }
 
     public function getFavourites() {

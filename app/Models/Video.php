@@ -47,4 +47,8 @@ class Video extends Model
         return $query->where('idVideo', $id);
     }
 
+    public function scopeFindByTitle($query, $title) {
+        return $query->where('title', '=', $title);
+    }
+
 }
