@@ -49,6 +49,9 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+
+        return redirect()->intended(RouteServiceProvider::HOME);
+        //return redirect()->route('/', [VideoController::class,'getVideos']);
+        //return redirect()->route('/');
     }
 }

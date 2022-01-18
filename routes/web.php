@@ -31,7 +31,6 @@ Route::get('/register', [RegistrationController::class,'registrationView']);
 Route::post('/register/save', [RegistrationController::class,'procesUserData']);
 
 //init route
-Route::get('/home', [VideoController::class,'getVideos']);
 Route::get('/', [VideoController::class,'getVideos']);
 
 
@@ -109,8 +108,8 @@ Route::get('/admin/changeBdData', function () {
 });
 */
 
-Route::get('/home', function () {
-    return view('moviesList');
-})->middleware(['auth'])->name('home');
+//Route::get('/', [VideoController::class,'getVideos'])->middleware(['auth'])->name('home');
+
+//return view('moviesList');
 
 require __DIR__.'/auth.php';
