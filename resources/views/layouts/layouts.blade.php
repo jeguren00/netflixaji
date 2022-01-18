@@ -47,7 +47,7 @@
 
                     <!--in case user has logged in -->
                     @auth
-                    <li class="nav-item"><a class="nav-link text-white">Hola (username)</a></li>
+                    <li class="nav-item"><a class="nav-link text-white">{{ auth()->user()->userName }}</a></li>
                     <li class="nav-item"><a href="/logout" class="nav-link text-white">Salir</a></li>
                     @endauth
                     <!--<li class="nav-item"><a href="{{ url('/user/viewData') }}" class="nav-link text-white">Mi perfil</a></li>-->
