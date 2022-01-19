@@ -6,15 +6,20 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #000000;
-            height: 100vh;
+            background: rgb(203,0,0);
+background: radial-gradient(circle, rgba(203,0,0,1) 0%, rgba(150,4,4,1) 57%, rgba(36,0,0,1) 100%);
+                height: 100vh;
+                color: white;
         }
+
+
+
         #login .container #login-row #login-column #login-box {
             margin-top: 120px;
             max-width: 600px;
             height: 320px;
-            border: 1px solid #9C9C9C;
-            background-color: #ff0000;
+            background-color: rgba(0,0,0,0.5);
+            border-radius: 15px;
         }
         #login .container #login-row #login-column #login-box #login-form {
             padding: 20px;
@@ -60,9 +65,10 @@
                     <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
                         {{ __('Forgot your password?') }}
                     </a>
+                
                 @endif
 
-                <button class="btn btn-light btn-md ">
+                <button class="btn btn-dark btn-md ">
                     {{ __('Log in') }}
     </button>
             </div>

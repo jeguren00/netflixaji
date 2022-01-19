@@ -18,11 +18,19 @@
             background-color: #000000;
             height: 100vh;
         }
+
+        .nav-item {
+            border-radius: 15px;
+            transition: background-color 0.5s;
+        }
         .nav-item:hover {
-            background-color: red;
+            background-color: #ff4d4d;
+            border-radius: 15px;
         }
         .foot-item:hover {
-            color: red;
+            color: #ff4d4d;
+            border-radius: 15px;
+
         }
     </style>
 </head>
@@ -67,7 +75,7 @@
                 </div>
                 <form method="POST" action="/search">
                     {{ csrf_field() }}
-                    <input type="text" name="searchBox" aria-label="Text input with dropdown button"><input type="submit" value="Buscar" class="btn btn-primary"></input>
+                    <input type="text" name="searchBox" aria-label="Text input with dropdown button"><input type="submit" value="Buscar" class="btn btn-dark"></input>
                 </form>
             </div>
         </div>  

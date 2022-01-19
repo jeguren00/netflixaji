@@ -48,16 +48,16 @@
 <!-- Movies Carousel -->
 <div class="container mt-5">
     <div class="row">
-        <h1 id="general">Pelis y Series</h1>
+        <h1 id="general" class="text-white mt-5">Pelis y Series</h1>
         @forelse ($videos as $video)
             @if (!($video->type === "serie" && $video->season != 0 && $video->chapter != 0))
                 <div class="col col-4 d-flex flex-wrap mt-5">
                     <div class="card" style="width: 18rem;">
                         <img class="card-img-top" src="{{ $video->image }}" alt="Card image cap">
-                        <div class="card-body">
+                        <div class="card-body text-center">
                             <h3 class="card-title">{{ $video->title }}</h3>
                             <p class="card-text">{{ $video->sinopsis }}</p>
-                            <a href="#" class="btn btn-primary">Ver película</a>
+                            <a href="#" class="btn btn-dark">Ver película</a>
                         </div>
                     </div>
                 </div>
@@ -67,15 +67,15 @@
         @endforelse
     </div>        
     <div class="row">
-        <h1 id="peliculas">Películas</h1>
+        <h1 id="peliculas" class="text-white mt-5">Películas</h1>
         @forelse ($pelis as $peli)
         <div class="col col-4 d-flex flex-wrap mt-5">
             <div class="card" style="width: 18rem;">
                 <img class="card-img-top" src="{{ $peli->image }}" alt="Card image cap">
-                <div class="card-body">
+                <div class="card-body text-center">
                     <h3 class="card-title">{{ $peli->title }}</h3>
                     <p class="card-text">{{ $peli->sinopsis }}</p>
-                    <a href="#" class="btn btn-primary">Ver película</a>
+                    <a href="#" class="btn btn-dark">Ver película</a>
                 </div>
             </div>
         </div>
@@ -84,16 +84,16 @@
         @endforelse
     </div>   
     <div class="row">
-        <h1 id="series">Series</h1>
+        <h1 id="series" class="text-white mt-5">Series</h1>
         @forelse ($videos as $video)
             @if ($video->type === "serie" && $video->season == 0 && $video->chapter == 0))
                 <div class="col col-4 d-flex flex-wrap mt-5">
                     <div class="card" style="width: 18rem;">
                         <img class="card-img-top" src="{{ $video->image }}" alt="Card image cap">
-                        <div class="card-body">
+                        <div class="card-body text-center">
                             <h3 class="card-title">{{ $video->title }}</h3>
                             <p class="card-text">{{ $video->sinopsis }}</p>
-                            <a href="#" class="btn btn-primary">Ver serie</a>
+                            <a href="#" class="btn btn-dark">Ver serie</a>
                         </div>
                     </div>
                 </div>
