@@ -57,7 +57,15 @@
                         <div class="card-body text-center">
                             <h3 class="card-title">{{ $video->title }}</h3>
                             <p class="card-text">{{ $video->sinopsis }}</p>
+<<<<<<< HEAD
                             <a href="#" class="btn btn-dark">Ver película</a>
+=======
+                            @if ($video->type == 'serie')
+                                <a href="/chapters?id={{ $video->idVideo }}" class="btn btn-primary">Ver película</a>
+                            @else
+                                <a href="/stream?id={{ $video->idVideo }}" class="btn btn-primary">Ver película</a>
+                            @endif
+>>>>>>> af42483b34496ed962eeadc1cf1bfb4c177b7d39
                         </div>
                     </div>
                 </div>
@@ -75,7 +83,11 @@
                 <div class="card-body text-center">
                     <h3 class="card-title">{{ $peli->title }}</h3>
                     <p class="card-text">{{ $peli->sinopsis }}</p>
+<<<<<<< HEAD
                     <a href="#" class="btn btn-dark">Ver película</a>
+=======
+                    <a href="/stream?id={{ $video->idVideo }}" class="btn btn-primary">Ver película</a>
+>>>>>>> af42483b34496ed962eeadc1cf1bfb4c177b7d39
                 </div>
             </div>
         </div>
@@ -84,6 +96,7 @@
         @endforelse
     </div>   
     <div class="row">
+<<<<<<< HEAD
         <h1 id="series" class="text-white mt-5">Series</h1>
         @forelse ($videos as $video)
             @if ($video->type === "serie" && $video->season == 0 && $video->chapter == 0))
@@ -95,9 +108,20 @@
                             <p class="card-text">{{ $video->sinopsis }}</p>
                             <a href="#" class="btn btn-dark">Ver serie</a>
                         </div>
+=======
+        <h1 id="series">Series</h1>
+        @forelse ($series as $serie)
+            <div class="col col-4 d-flex flex-wrap mt-5">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{ $serie->image }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h3 class="card-title">{{ $serie->title }}</h3>
+                        <p class="card-text">{{ $serie->sinopsis }}</p>
+                        <a href="/stream?id={{ $video->idVideo }}" class="btn btn-primary">Ver serie</a>
+>>>>>>> af42483b34496ed962eeadc1cf1bfb4c177b7d39
                     </div>
                 </div>
-            @endif
+            </div>
         @empty
             <p>No hay series</p>
         @endforelse
