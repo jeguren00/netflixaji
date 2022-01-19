@@ -31,6 +31,12 @@ class Video extends Model
      */
     public $timestamps = false;
 
+    public function scopeType($query,$type){
+        return $query->where('type',$type);   
+    }
+
+
+
     public function scopePelis($query){
         return $query->where('type',"movie");   
     }

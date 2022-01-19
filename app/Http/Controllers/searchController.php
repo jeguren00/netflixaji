@@ -30,7 +30,20 @@ class searchController extends Controller
     }
 
     public function getResultsWithGen($genre) {
+
+        //Si recibe ID esto desaparece
         $idOfGenreChosed = $this->genre->scopeGenres($this->genreQuery)->where('name', $genre)->value('idGenere');
+
+        $movies = $this->video->query();   /// SELECT * FROM VIDEO WHERE
+        $movies->type("movie");     //type=movies
+        $movies->genere($idOfGenreChosed); // AND genere=2
+        $movies->joinGeneres(); // JOIN () JOIN
+        $listMovies= $movies->get();  // ;
+        
+
+
+
+        
 
         $moviesOfThisGenre = $this->genXVid->VideoAmbGenre($this->genXVidQuery)->where('idGenere',$idOfGenreChosed)->where('type','movie')->get();
         $seriesOfThisGenre = $this->genXVid->VideoAmbGenre($this->genXVidQuery)->where('idGenere',$idOfGenreChosed)->where('type','serie')->where('season','0')->where('chapter','0')->get();
@@ -41,6 +54,8 @@ class searchController extends Controller
 
     public function getResultsWithText(Request $request) {
         $inputText = $request->input('searchBox');
+
+
         $moviesOfThisGenre = $this->video->pelis($this->query)->where('title', 'like', '%'.$inputText.'%')->get();
         $seriesOfThisGenre = $this->video->series($this->query)->where('title', 'like', '%'.$inputText.'%')->get();
 
