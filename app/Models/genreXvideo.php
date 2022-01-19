@@ -23,8 +23,8 @@ class genreXvideo extends Model
      */
     public $timestamps = false;
 
-    public function scopeGenre($query, $idOfGenreChosed){
-        return $query->where('idGenere',$idOfGenreChosed);   
+    public function scopeVideoAmbGenre($query){
+        return $query->leftJoin('videos', 'GenreXVideo.idVideo', '=' ,'videos.idVideo');   
     }
 
     public function scopeTots($query) {
