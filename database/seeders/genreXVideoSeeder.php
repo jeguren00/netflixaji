@@ -38,10 +38,29 @@ class genreXVideoSeeder extends Seeder
             'idVideo' => '4'
             ]
         );
-        //black mirror
+
+        DB::table('GenreXVideo')->insert(
+            ['idGenere' => '4', 
+            'idVideo' => '5'
+            ]
+        );
+
+        DB::table('GenreXVideo')->insert(
+            ['idGenere' => '4', 
+            'idVideo' => '6'
+            ]
+        );
+
+        //series
         DB::table('GenreXVideo')->insert(
             ['idGenere' => '1', 
-            'idVideo' => '5'
+            'idVideo' => '7'
+            ]
+        );
+
+        DB::table('GenreXVideo')->insert(
+            ['idGenere' => '3', 
+            'idVideo' => '11'
             ]
         );
     }

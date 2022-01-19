@@ -65,7 +65,8 @@ class VideoSeeder extends Seeder
             [
                 'title'     => 'Indiana Jones and the Last Crusade',
                 'year'      => 1989 , 
-                'sinopsis'  => "a",
+                'sinopsis'  => "La trama describe la búsqueda del padre del arqueólogo, secuestrado por los nazis, los cuales buscan el Grial para obtener la inmortalidad. Para impedirlo, Indy debe descubrir una serie de pistas relacionadas con el mismo, 
+                las cuales habrían de llevarlo directamente a la ubicación del legendario cáliz usado por Jesucristo en La Última Cena. ",
                 'duration'  => "123" ,
                 'type'      => "movie",
                 'image'     => "./img/indiJonesCrussade.jpg" ,
@@ -74,7 +75,34 @@ class VideoSeeder extends Seeder
             ]
         );
 
-        //serie
+        DB::table('videos')->insert(
+            [
+                'title'     => 'Lawrence of Arabia',
+                'year'      => 1962 , 
+                'sinopsis'  => "La película se basa en la participación de Thomas Edward Lawrence en la revuelta árabe, durante la Primera Guerra Mundial.",
+                'duration'  => "222" ,
+                'type'      => "movie",
+                'image'     => "./img/Lawrence_of_arabia.jpg" ,
+                'file'      => "",
+                'trailer'   => ""
+            ]
+        );
+
+        DB::table('videos')->insert(
+            [
+                'title'     => 'Battle of Britain',
+                'year'      => 1962 , 
+                'sinopsis'  => "La batalla de Inglaterra es una película inspirada en el famoso hecho homónimo, 
+                cuando el ejército nazi intentó invadir Inglaterra en el año 1940 al inicio de la Segunda Guerra Mundial.",
+                'duration'  => "222" ,
+                'type'      => "movie",
+                'image'     => "./img/battleOfBritain.jpg" ,
+                'file'      => "",
+                'trailer'   => ""
+            ]
+        );
+
+        //series
         DB::table('videos')->insert(
             [
                 'title'     => 'Black Mirror', 
@@ -131,6 +159,70 @@ class VideoSeeder extends Seeder
                 'type'      => "serie",
                 'image'     => "./img/blackMirror.jpg" ,
                 'file'      => "./public/video/blackMirror13.avi",
+                'trailer'   => "",
+                'season'    => "1",
+                'chapter'   => "3"
+            ]
+        );
+
+        DB::table('videos')->insert(
+            [
+                'title'     => 'Rome', 
+                'year'      => 2005 , 
+                'sinopsis'  => "La serie es un drama histórico que representa el período que rodea la violenta transformación de la República romana en el Imperio romano; 
+                un cambio causado por una guerra civil entre populistas (populares) y conservadores (optimates), la crisis de las instituciones políticas y las actuaciones de hombres y mujeres muy ambiciosos. .",
+                'duration'  => "" ,
+                'type'      => "serie",
+                'image'     => "./img/roma.jpeg" ,
+                'file'      => " ",
+                'trailer'   => "",
+                'season'    => "0",
+                'chapter'   => "0"
+            ]
+        );
+
+        DB::table('videos')->insert(
+            [
+                'title'     => 'Rome', 
+                'year'      => 2005 , 
+                'sinopsis'  => "La serie es un drama histórico que representa el período que rodea la violenta transformación de la República romana en el Imperio romano; 
+                un cambio causado por una guerra civil entre populistas (populares) y conservadores (optimates), la crisis de las instituciones políticas y las actuaciones de hombres y mujeres muy ambiciosos. .",
+                'duration'  => "" ,
+                'type'      => "serie",
+                'image'     => "./img/roma.jpeg" ,
+                'file'      => "./public/video/roma11.avi",
+                'trailer'   => "",
+                'season'    => "1",
+                'chapter'   => "1"
+            ]
+        );
+
+        DB::table('videos')->insert(
+            [
+                'title'     => 'Rome', 
+                'year'      => 2005 , 
+                'sinopsis'  => "La serie es un drama histórico que representa el período que rodea la violenta transformación de la República romana en el Imperio romano; 
+                un cambio causado por una guerra civil entre populistas (populares) y conservadores (optimates), la crisis de las instituciones políticas y las actuaciones de hombres y mujeres muy ambiciosos. .",
+                'duration'  => "" ,
+                'type'      => "serie",
+                'image'     => "./img/roma.jpeg" ,
+                'file'      => "./public/video/roma12.avi",
+                'trailer'   => "",
+                'season'    => "1",
+                'chapter'   => "2"
+            ]
+        );
+
+        DB::table('videos')->insert(
+            [
+                'title'     => 'Rome', 
+                'year'      => 2005 , 
+                'sinopsis'  => "La serie es un drama histórico que representa el período que rodea la violenta transformación de la República romana en el Imperio romano; 
+                un cambio causado por una guerra civil entre populistas (populares) y conservadores (optimates), la crisis de las instituciones políticas y las actuaciones de hombres y mujeres muy ambiciosos. .",
+                'duration'  => "" ,
+                'type'      => "serie",
+                'image'     => "./img/roma.jpeg" ,
+                'file'      => "./public/video/roma13.avi",
                 'trailer'   => "",
                 'season'    => "1",
                 'chapter'   => "3"

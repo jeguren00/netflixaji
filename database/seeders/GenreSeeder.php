@@ -26,5 +26,17 @@ class GenreSeeder extends Seeder
             'description' => 'action'
             ]
         );
+
+        DB::table('genres')->insert(
+            ['name' => 'historic', 
+            'description' => 'historic'
+            ]
+        );
+
+        DB::table('genres')->insert(
+            ['name' => 'belic', 
+            'description' => 'belic'
+            ]
+        );
     }
 }

@@ -37,7 +37,6 @@ class searchController extends Controller
 
         $generes = $this->genre->genres($this->query)->get(); 
         return view("searchResults")->with(['movies' => $moviesOfThisGenre ])->with(['series' => $seriesOfThisGenre ])->with(['generes' => $generes])->with(['searchPattern' => $genre]);
-
     }
 
     public function getResultsWithText(Request $request) {
