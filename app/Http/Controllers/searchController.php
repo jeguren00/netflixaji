@@ -16,7 +16,6 @@ class searchController extends Controller
     private $video;
     private $genre;
     private $genXVid;
-    private $genXVidQuery;
 
 
 
@@ -24,43 +23,51 @@ class searchController extends Controller
         $this->video = new Video();
         $this->genre = new genre();
         $this->genXVid = new genreXVideo();
-        $this->query = $this->video->query();
-        $this->genreQuery = $this->genre->query();
-        $this->genXVidQuery = $this->genXVid->query();
     }
 
-    public function getResultsWithGen($genre) {
-
-        //Si recibe ID esto desaparece
-        $idOfGenreChosed = $this->genre->scopeGenres($this->genreQuery)->where('name', $genre)->value('idGenere');
-
+    public function getResultsWithGen($genreId) {
         $movies = $this->video->query();   /// SELECT * FROM VIDEO WHERE
-        $movies->type("movie");     //type=movies
-        $movies->genere($idOfGenreChosed); // AND genere=2
-        $movies->joinGeneres(); // JOIN () JOIN
-        $listMovies= $movies->get();  // ;
+        $movies->type("movie"); // WHERE TYPE = movie
+        $movies->JoinGeneres($genreId); // JOIN WITH GenreXVideo, WHERE $genreId = genreXVideo.genreId
+        $listMovies= $movies->get(); //;
         
+        $series = $this->video->query(); /// SELECT * FROM VIDEO WHERE
+        $series->Series(); // WHERE TYPE = serie
+        $series->JoinGeneres($genreId); // JOIN WITH GenreXVideo, WHERE $genreId = genreXVideo.genreId
+        $listSeries = $series->get(); //;
 
+        //old
+        //$moviesOfThisGenre = $this->genXVid->VideoAmbGenre($this->genXVidQuery)->where('idGenere',$idOfGenreChosed)->where('type','movie')->get();
+        //$seriesOfThisGenre = $this->genXVid->VideoAmbGenre($this->genXVidQuery)->where('idGenere',$idOfGenreChosed)->where('type','serie')->where('season','0')->where('chapter','0')->get();
 
-
-        
-
-        $moviesOfThisGenre = $this->genXVid->VideoAmbGenre($this->genXVidQuery)->where('idGenere',$idOfGenreChosed)->where('type','movie')->get();
-        $seriesOfThisGenre = $this->genXVid->VideoAmbGenre($this->genXVidQuery)->where('idGenere',$idOfGenreChosed)->where('type','serie')->where('season','0')->where('chapter','0')->get();
-
+        //query retriving list of genres for the dropdown
         $generes = $this->genre->genres($this->query)->get(); 
-        return view("searchResults")->with(['movies' => $moviesOfThisGenre ])->with(['series' => $seriesOfThisGenre ])->with(['generes' => $generes])->with(['searchPattern' => $genre]);
+
+        //return
+        return view("searchResults")->with(['movies' => $listMovies ])->with(['series' => $listSeries ])->with(['generes' => $generes])->with(['searchPattern' => $genreId]);
     }
 
     public function getResultsWithText(Request $request) {
         $inputText = $request->input('searchBox');
 
+        //old
+        //$moviesOfThisGenre = $this->video->pelis($this->query)->where('title', 'like', '%'.$inputText.'%')->get();
+        //$seriesOfThisGenre = $this->video->series($this->query)->where('title', 'like', '%'.$inputText.'%')->get();
 
-        $moviesOfThisGenre = $this->video->pelis($this->query)->where('title', 'like', '%'.$inputText.'%')->get();
-        $seriesOfThisGenre = $this->video->series($this->query)->where('title', 'like', '%'.$inputText.'%')->get();
+        $movies = $this->video->query(); /// SELECT * FROM VIDEO WHERE
+        $movies->type("movie"); // WHERE TYPE = movie
+        $movies->Title($inputText); // WHERE title like %.$inputText.%
+        $listMovies= $movies->get(); //;
+        
+        $series = $this->video->query(); /// SELECT * FROM VIDEO WHERE
+        $series->Series(); // WHERE TYPE = serie
+        $series->Title($inputText); // WHERE title like %.$inputText.%
+        $listSeries = $series->get(); //;
 
+        //query retriving list of genres for the dropdown
         $generes = $this->genre->genres($this->query)->get(); 
 
-        return view("searchResults")->with(['movies' => $moviesOfThisGenre ])->with(['series' => $seriesOfThisGenre ])->with(['generes' => $generes])->with(['searchPattern' => $inputText]);
+        //return
+        return view("searchResults")->with(['movies' => $listMovies ])->with(['series' => $listSeries ])->with(['generes' => $generes])->with(['searchPattern' => $inputText]);
     }
 }

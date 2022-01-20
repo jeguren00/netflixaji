@@ -68,7 +68,7 @@
                     <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Genres</button>
                     <div class="dropdown-menu">
                     @forelse ($generes as $genere)
-                        <a class="dropdown-item" href="/search/{{$genere->name}}">{{$genere->name}}</a>
+                        <a class="dropdown-item" href="/search/{{$genere->idGenere}}">{{$genere->name}}</a>
                     @empty
                         <p>No hay generos</p>
                     @endforelse

@@ -35,8 +35,14 @@ class Video extends Model
         return $query->where('type',$type);   
     }
 
+    public function scopeJoinGeneres($query, $idGen){
+        return $query->rightJoin('GenreXVideo', 'videos.idVideo', '=' ,'GenreXVideo.idVideo')->where("GenreXVideo.idGenere", $idGen);   
+    }
 
-
+    public function scopeTitle($query, $partOfTitle){
+        return $query->where('title', 'like', '%'.$partOfTitle.'%');   
+    }
+    
     public function scopePelis($query){
         return $query->where('type',"movie");   
     }
