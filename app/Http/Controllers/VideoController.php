@@ -63,9 +63,11 @@ class VideoController extends Controller
 
     public function addToFavourites(Request $request) {
         $videoId = $_GET['id'];
-        foreach ($request->session()->get('favourites') as $item) {
-            if ($item->idVideo === intval($videoId)) {
-                return redirect(url()->previous());
+        if ($request->session()->get('favourites') != null) {
+            foreach ($request->session()->get('favourites') as $item) {
+                if ($item->idVideo === intval($videoId)) {
+                    return redirect(url()->previous());
+                }
             }
         }
 
