@@ -62,6 +62,7 @@
                             @else
                                 <a href="/stream?id={{ $video->idVideo }}" class="btn btn-primary">Ver película</a>
                             @endif
+                            <a href="/addFavourite?id={{ $video->idVideo }}" class="btn btn-success">Me gusta</a>
                         </div>
                     </div>
                 </div>
@@ -80,6 +81,7 @@
                     <h3 class="card-title">{{ $peli->title }}</h3>
                     <p class="card-text">{{ $peli->sinopsis }}</p>
                     <a href="/stream?id={{ $video->idVideo }}" class="btn btn-primary">Ver película</a>
+                    <a href="/addFavourite?id={{ $video->idVideo }}" class="btn btn-success">Me gusta</a>
                 </div>
             </div>
         </div>
@@ -97,6 +99,7 @@
                         <h3 class="card-title">{{ $serie->title }}</h3>
                         <p class="card-text">{{ $serie->sinopsis }}</p>
                         <a href="/stream?id={{ $video->idVideo }}" class="btn btn-primary">Ver serie</a>
+                        <a href="/addFavourite?id={{ $video->idVideo }}" class="btn btn-success">Me gusta</a>
                     </div>
                 </div>
             </div>

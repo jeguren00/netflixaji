@@ -87,6 +87,12 @@ Route::get('/movies', function () {
 
 Route::get('/chapters', [VideoController::class, 'listChapters']);
 
+Route::get('/addFavourite', [VideoController::class, 'addToFavourites']);
+
+Route::get('/favourites', [VideoController::class, 'listfavourites']);
+
+Route::get('/deleteFavourite', [VideoController::class, 'deleteFavourite']);
+
 //admin part
 /*
 Route::get('/admin/listUsers', function () {

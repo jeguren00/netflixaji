@@ -43,8 +43,9 @@ class VideoController extends Controller
     public function viewStream() {
         $id = $_GET['id'];
         $video = $this->video->findById($this->query, $id)->get();
+        $generes = $this->genre->genres($this->queryGen)->get();
         
-        return view("viewStreaming")->with(['video' => $video]);
+        return view("viewStreaming")->with(['video' => $video])->with(['generes' => $generes]);
     }
 
     public function listChapters() {
@@ -55,12 +56,38 @@ class VideoController extends Controller
         $chapters = $this->video->findByTitle($title)->orderBy('season')->orderBy('chapter')->get();
         $seasons = $chapters->last()->season;
 
-        return view("serie")->with(['chapters' => $chapters])->with(['seasons' => $seasons]);
+        $generes = $this->genre->genres($this->queryGen)->get();
+
+        return view("serie")->with(['chapters' => $chapters])->with(['seasons' => $seasons])->with(['generes' => $generes]);
     }
 
-    public function getFavourites() {
-        // $userId = Auth::user()->userId;
+    public function addToFavourites(Request $request) {
+        $videoId = $_GET['id'];
+        foreach ($request->session()->get('favourites') as $item) {
+            if ($item->idVideo === intval($videoId)) {
+                return redirect(url()->previous());
+            }
+        }
 
-        return view('userFavourites'); // ->with(['userId' => $userId]);
+        $video = $this->video->findById($this->query, $videoId)->get();
+
+        $favourites = $request->session()->get('favourites', []);
+        array_push($favourites, $video[0]);
+        $request->session()->put('favourites', $favourites);
+
+        return redirect(url()->previous());
+    }
+
+    public function listFavourites(Request $request) {
+        $generes = $this->genre->genres($this->queryGen)->get();
+        $favourites = $request->session()->get('favourites');
+        if ($favourites === null) {
+            $favourites = [];
+        }
+        return view('userFavourites')->with(['videos' => $favourites])->with(['generes' => $generes]);
+    }
+
+    public function deleteFavourite(Request $request) {
+        return redirect(url()->previous());
     }
 }
