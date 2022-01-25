@@ -56,8 +56,8 @@
                 <div class="card-body text-center">
                     <h3 class="card-title">{{ $peli->title }}</h3>
                     <p class="card-text">{{ $peli->sinopsis }}</p>
-                    <a href="/stream?id={{ $video->idVideo }}" class="btn btn-primary">Ver película</a>
-                    <a href="/addFavourite?id={{ $video->idVideo }}" class="btn btn-success">Me gusta</a>
+                    <a href="/stream?id={{ $peli->idVideo }}" class="btn btn-primary">Ver película</a>
+                    <a href="/addFavourite?id={{ $peli->idVideo }}" class="btn btn-success">Me gusta</a>
                 </div>
             </div>
         </div>
@@ -74,8 +74,8 @@
                     <div class="card-body">
                         <h3 class="card-title">{{ $serie->title }}</h3>
                         <p class="card-text">{{ $serie->sinopsis }}</p>
-                        <a href="/stream?id={{ $video->idVideo }}" class="btn btn-primary">Ver serie</a>
-                        <a href="/addFavourite?id={{ $video->idVideo }}" class="btn btn-success">Me gusta</a>
+                        <a href="/stream?id={{ $serie->idVideo }}" class="btn btn-primary">Ver serie</a>
+                        <a href="/addFavourite?id={{ $serie->idVideo }}" class="btn btn-success">Me gusta</a>
                     </div>
                 </div>
             </div>
