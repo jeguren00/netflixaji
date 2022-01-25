@@ -25,6 +25,9 @@
         @empty
             <p>No hay videos en favoritos</p>
         @endforelse
-    </div>        
+    </div>
+    <div class="row mt-5">
+        <a href="/deleteAllFavourites" class="btn btn-danger">Eliminar Todas</a>
+    </div>
 </div>
 @endsection

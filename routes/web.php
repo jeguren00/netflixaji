@@ -93,6 +93,8 @@ Route::get('/favourites', [VideoController::class, 'listfavourites']);
 
 Route::get('/deleteFavourite', [VideoController::class, 'deleteFavourite']);
 
+Route::get('/deleteAllFavourites', [VideoController::class, 'deleteAllFavourites']);
+
 //admin part
 /*
 Route::get('/admin/listUsers', function () {

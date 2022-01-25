@@ -90,6 +90,19 @@ class VideoController extends Controller
     }
 
     public function deleteFavourite(Request $request) {
+        $id = $_GET['id'];
+        $favourites = $request->session()->get('favourites');
+        foreach ($favourites as $key => $favourite) {
+            if ($favourite->idVideo === intval($id)) {
+                unset($favourites[$key]);
+                $request->session()->put('favourites', $favourites);
+            }
+        }
+        return redirect(url()->previous());
+    }
+
+    public function deleteAllFavourites(Request $request) {
+        $request->session()->forget('favourites');
         return redirect(url()->previous());
     }
 }
