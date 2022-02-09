@@ -7,6 +7,8 @@ use App\Http\Controllers\genreController;
 use App\Http\Controllers\searchController;
 
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
