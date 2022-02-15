@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\PeliCollection;
+use App\Http\Resources\PeliResource;
+use App\Http\Resources\VideoResource;
 use Illuminate\Http\Request;
 use App\Models\Video;
 use Illuminate\View\View;
@@ -104,5 +107,24 @@ class VideoController extends Controller
     public function deleteAllFavourites(Request $request) {
         $request->session()->forget('favourites');
         return redirect(url()->previous());
+    }
+    
+    public function getMovies() {
+        $movies = $this->video->scopePelis($this->query);
+        return new PeliCollection($movies->get());
+    }
+
+    public function addVideo(Request $request) {
+        $video = Video::create($request->all());
+        return new VideoResource($video);    
+    }
+
+    public function modifyVideo(Request $request) {
+        $video = Video::find($request->id);
+        if (!$video)  return response()->json('No existe el producto', 200);
+
+
+        $video->update($request->all());
+        return new VideoResource($video);    
     }
 }

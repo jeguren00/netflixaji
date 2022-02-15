@@ -10,6 +10,13 @@ class Video extends Model
 
     use HasFactory;
 
+        /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['title','year','sinopsis','duration','type','image','file','trailer','season','chapter'];
+
     /**
      * The table associated with the model.
      *
