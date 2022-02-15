@@ -31,6 +31,13 @@ class Video extends Model
      */
     public $timestamps = false;
 
+    protected $fillable = [
+        'title',
+        'type',
+        'season',
+        'chapter',
+    ];
+
     public function scopeType($query,$type){
         return $query->where('type',$type);   
     }
