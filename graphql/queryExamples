@@ -16,6 +16,10 @@ query getUserById {
 	}
 }
 
+
+
+
+
 query getAllVideos {
   videos{
     idVideo
