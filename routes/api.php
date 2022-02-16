@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\genreController;
 use App\Http\Resources\GenreCollection;
@@ -41,8 +42,11 @@ Route::get('/genres', function () {
     return new GenreCollection(genre::all());
 });
 
+// Login
+Route::get('/login', [AuthenticatedSessionController::class, 'loginAPI']);
+
 // Add a video
-Route::post('/videos', [VideoController::class, 'addVideo']);
+Route::middleware('auth:sanctum')->post('/videos', [VideoController::class, 'addVideo']);
 
 // Modify a video
 // Route::patch('/videos', [VideoController::class, 'modifyVideo']);
