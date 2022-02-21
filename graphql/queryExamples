@@ -1,0 +1,39 @@
+query getAllUsers {
+  users {
+  	userId
+  	userName
+  	email
+  	password
+	}
+}
+
+query getUserById {
+  userId(userId:1) {
+  	userId
+  	userName
+  	email
+  	password
+	}
+}
+
+
+
+
+
+query getAllVideos {
+  videos{
+    idVideo
+    title
+    year
+    type
+	}
+}
+
+query getVideoById {
+  videoId(idVideo:1){
+    idVideo
+    title
+    year
+    type
+	}
+}

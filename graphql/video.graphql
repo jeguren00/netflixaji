@@ -1,0 +1,11 @@
+type Video {
+    idVideo: ID!
+    title: String!
+    year: String!
+    type: String!
+}
+
+extend type Query {
+  videoId(idVideo: ID! @eq): Video @find
+  videos: [Video!]! @all
+}
