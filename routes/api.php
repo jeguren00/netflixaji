@@ -27,18 +27,18 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 // List all videos
-Route::get('/videos', function () {
+Route::middleware('auth:sanctum')->get('/videos', function () {
     return new VideoCollection(Video::all());
 });
 
 // List all movies
-Route::get('/movies', [VideoController::class, 'getMovies']);
+Route::middleware('auth:sanctum')->get('/movies', [VideoController::class, 'getMovies']);
 
 // genre by id
-Route::get('/genres', [genreController::class, 'getGenre']);
+Route::middleware('auth:sanctum')->get('/genres', [genreController::class, 'getGenre']);
 
  // List all genres
-Route::get('/genres', function () {
+ Route::middleware('auth:sanctum')->get('/genres', function () {
     return new GenreCollection(genre::all());
 });
 
