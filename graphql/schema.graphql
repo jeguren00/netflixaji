@@ -1,2 +1,3 @@
 #import user.graphql
 #import video.graphql
+#import genre.graphql

@@ -3,9 +3,23 @@ type Video {
     title: String!
     year: String!
     type: String!
+    sinopsis: String!
+    duration: String!
+    image: String!
+    file: String!
+    trailer: String!
+    season: String
+    chapter: String
 }
 
 extend type Query {
   videoId(idVideo: ID! @eq): Video @find
   videos: [Video!]! @all
+  movies(type: String! @eq): Video @find
+}
+
+extend type Mutation {
+  createVideo(title: String!, year: String!, sinopsis: String!, duration: String!, type: String!, image: String!, file: String!, trailer: String!, season: String, chapter: String): Video @create
+  modifyVideo(idVideo: ID!, title: String, year: String, sinopsis: String, duration: String, type: String, image: String, file: String, trailer: String, season: String, chapter: String): Video @update
+  deleteVideo(idVideo: ID!): Video @delete
 }

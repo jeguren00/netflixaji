@@ -1,0 +1,16 @@
+type genre {
+  idGenere: ID!
+  name: String!
+  description: String!
+}
+
+extend type Query{
+    genreId(idGenere: ID! @eq): genre @find
+    genres: [genre!]! @all
+}
+
+extend type Mutation {
+  createGenre(name: String!, description: String!): genre @create
+  modifyGenre(idGenere: ID!, name: String, description: String): genre @update
+  deleteGenre(idGenere: ID!): genre @delete
+}
