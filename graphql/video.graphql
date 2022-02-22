@@ -23,3 +23,5 @@ extend type Mutation {
   modifyVideo(idVideo: ID!, title: String, year: String, sinopsis: String, duration: String, type: String, image: String, file: String, trailer: String, season: String, chapter: String): Video @update
   deleteVideo(idVideo: ID!): Video @delete
 }
+
+
