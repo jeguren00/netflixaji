@@ -12,7 +12,7 @@ extend type Query {
 }
 
 extend type Mutation {
-  createUser(userName: String!, name: String!, surname: String!, email: String!, password: String!): User @create
+  createUser(userName: String!, name: String!, surname: String!, email: String!, password: String!): User @create @can(ability: "admin")
   modifyUser(userName: String!, name: String!, surname: String!, email: String!, password: String!): User @update
   deleteUser(userId: ID!): User @delete
 }
