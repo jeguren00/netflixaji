@@ -1,8 +1,9 @@
 type User {
-  userId: ID!
-  userName: String!
-  email: String!
-  password: String!
+  userId: ID! @guard
+  userName: String! @guard
+  email: String! @guard
+  password: String! @guard
+  token: String! @guard
 }
 
 extend type Query {
