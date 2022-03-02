@@ -42,6 +42,8 @@ class Video extends Model
         return $this->hasManyThrough(genre::class, genreXvideo::class);
     }
 
+
+    
     public function scopeType($query,$type){
         return $query->where('type',$type);   
     }
