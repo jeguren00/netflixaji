@@ -22,7 +22,7 @@ class Users extends Migration
             $table->String('email');
             $table->String('password');
             // $table->date('birthDate');
-            // $table->String('type');
+            $table->String('type')->default("normal");
             $table->boolean('block')->default(false);
             $table->integer('creditCard')->default(0);
             $table->String('creditCardExpirationDate')->default('');

@@ -53,5 +53,17 @@ class UserSeeder extends Seeder
         'creditCard' => 14231 ,
         'creditCardExpirationDate' => '23/12',
         'creditCardCVV' => '339' ]);
+
+        DB::table('users')->insert([
+            'userName' => 'admin',
+        'name' => 'admin', 
+        'surname' => 'admin', 
+        'email' => 'admin@admin.com',
+        'password' => Hash::make('admin'),
+        'block' => false,
+        'creditCard' => 14231 ,
+        'creditCardExpirationDate' => '23/12',
+        'type' => 'admin',
+        'creditCardCVV' => '339' ]);
     }
 }
