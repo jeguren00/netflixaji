@@ -33,17 +33,17 @@ use App\Models\Video;
 //2. List all series
 Route::get('/series', function () {
     return new VideoCollection(Video::where('type', 'serie')->where('season', 0)->where('chapter', 0)->get());
-});
+})->middleware('auth:sanctum');
 
 //4. List video by id
 Route::get('/video/{id}', function ($id) {
     return new VideoResource(Video::find($id));
-});
+})->middleware('auth:sanctum');
 
 //6. List all users
 Route::get('/users', function () {
     return new UserCollection(User::all());
-});
+})->middleware('auth:sanctum');
 
 // List all videos
 Route::middleware('auth:sanctum')->get('/videos', function () {
@@ -73,17 +73,17 @@ Route::middleware('auth:sanctum')->patch('/videos', [VideoController::class, 'mo
 //8. List users by id
 Route::get('/user/{id}', function ($id) {
     return new UserResource(User::find($id));
-});
+})->middleware('auth:sanctum');;
 
 //10. Create user
 Route::post('/user', function (Request $request) {
     $user = new User();
     $user->create($request->all());
     return User::find($user);
-});
+})->middleware('auth:sanctum');;
 
 //12. Modify user
 Route::post('/user/{id}', function (Request $request, $id) {
     $user = User::where("userId",$id)->update($request->all());
     return User::find($user);
-});
+})->middleware('auth:sanctum');;
