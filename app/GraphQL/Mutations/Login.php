@@ -18,7 +18,13 @@ class Login
             //throw new Error('Invalid credentials.');
         }
         $user = User::where('email', auth()->user()->email)->firstOrFail();
-        $token = $user->createToken('')->plainTextToken;
+
+        //si es un admin se crea el token con privilegios de admin
+        if($user->type == "admin") {
+            $token = $user->createToken('token', ['admin'])->plainTextToken;
+        } else {
+        $token = $user->createToken('token')->plainTextToken;
+        }
         $user['token']=$token;
         
         return $user ;
