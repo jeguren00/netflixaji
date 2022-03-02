@@ -38,6 +38,10 @@ class Video extends Model
      */
     public $timestamps = false;
 
+    public function genere() {
+        return $this->hasManyThrough(genre::class, genreXvideo::class);
+    }
+
     public function scopeType($query,$type){
         return $query->where('type',$type);   
     }
