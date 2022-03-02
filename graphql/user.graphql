@@ -1,6 +1,8 @@
 type User {
   userId: ID! @guard
   userName: String! @guard
+  name: String! @guard
+  surname: String! @guard
   email: String! @guard
   password: String! @guard
   token: String! @guard

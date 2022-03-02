@@ -20,7 +20,7 @@ class Login
         $user = User::where('email', auth()->user()->email)->firstOrFail();
 
         //si es un admin se crea el token con privilegios de admin
-        if($user->type == "admin") {
+        if($user->type == "admin") {//está aquí el error?
             $token = $user->createToken('token', ['admin'])->plainTextToken;
         } else {
         $token = $user->createToken('token')->plainTextToken;
