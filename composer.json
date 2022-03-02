@@ -12,7 +12,7 @@
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "mll-lab/laravel-graphql-playground": "^2.6",
-        "nuwave/lighthouse": "^5.39"
+        "nuwave/lighthouse": "^5.40"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
