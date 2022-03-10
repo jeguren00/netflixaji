@@ -33,7 +33,7 @@ use App\Models\Video;
 //2. List all series
 Route::get('/series', function () {
     return new VideoCollection(Video::where('type', 'serie')->where('season', 0)->where('chapter', 0)->get());
-})->middleware('auth:sanctum');
+});
 
 //4. List video by id
 Route::get('/video/{id}', function ($id) {
