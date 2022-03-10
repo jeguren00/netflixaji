@@ -54,7 +54,7 @@ Route::middleware('auth:sanctum')->get('/videos', function () {
 Route::middleware('auth:sanctum')->get('/movies', [VideoController::class, 'getMovies']);
 
 // genre by id
-Route::middleware('auth:sanctum')->get('/genres', [genreController::class, 'getGenre']);
+//Route::middleware('auth:sanctum')->get('/genres', [genreController::class, 'getGenre']);
 
  // List all genres
  Route::middleware('auth:sanctum')->get('/genres', function () {

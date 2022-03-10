@@ -22,6 +22,52 @@ Proyecto de 2º de __Desarrollo de Aplicaciones Web__ de la Escola del Treball d
 <img src="./documentation/visualizar%20streaming.png">
 
 
+## Rutas API 
+
+# Listado de todas las series:
+Get:/series
+
+# Listado de vídeo por id
+Get:/video/{id}
+
+# Listado de todos los usuarios
+Get:/users
+
+# Listado de todos los videos:
+Get:/videos
+
+# Listado de todas las movies:
+Get:/movies
+
+# Listado de todos los generos
+Get:/genres
+
+# Ruta para recibir bearer token
+
+Parametros tienen que ser email y password, como params.
+
+Get:/login
+
+# Crea un video
+Post:/videos
+
+# Modifica video
+Patch:/videos
+
+Parametros de video: 'title','year','sinopsis','duration','type','image','file','trailer','season','chapter'
+
+# Listado de usuario por id
+/user/{id}
+# Crear usuario
+Post:/user
+
+Parametros de usuario: 'name','userName','surname','email', 'password'
+
+# Modifica un usuario
+Post:/user/{id}
+
+Parametros de usuario: 'name','userName','surname','email', 'password'
+
 
 
 
