@@ -62,7 +62,7 @@ Route::middleware('auth:sanctum')->get('/movies', [VideoController::class, 'getM
 });
 
 // Login
-Route::get('/login', [AuthenticatedSessionController::class, 'loginAPI']);
+Route::post('/login', [AuthenticatedSessionController::class, 'loginAPI']);
 
 // Add a video
 Route::middleware('auth:sanctum')->post('/videos', [VideoController::class, 'addVideo']);
